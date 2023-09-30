@@ -2121,6 +2121,7 @@
     <Content Include="plugins\uplot\uPlot.iife.min.js" />
     <Content Include="plugins\uplot\uPlot.min.css" />
     <Content Include="start_page.aspx" />
+    <Content Include="testform.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2135,6 +2136,13 @@
     </Compile>
     <Compile Include="start_page.aspx.designer.cs">
       <DependentUpon>start_page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testform.aspx.cs">
+      <DependentUpon>testform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testform.aspx.designer.cs">
+      <DependentUpon>testform.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
