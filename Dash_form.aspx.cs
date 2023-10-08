@@ -26,6 +26,7 @@ namespace Dahboard_project
 
             // for cards
             Totalsales_card_func(DateTime.Now.Year.ToString());
+            Rtrnsales_card_func(DateTime.Now.Year.ToString());
 
 
             // sales barchart
@@ -44,6 +45,7 @@ namespace Dahboard_project
         {
             // for cards
             Totalsales_card_func(CmbYear.Value.ToString());
+            Rtrnsales_card_func(CmbYear.Value.ToString());
             //for sales_barchart
             sales_BARCHART_func(CmbYear.Value.ToString());
             //for burchases_barchart
@@ -65,6 +67,24 @@ namespace Dahboard_project
             while (dr.Read())
             {
                 Label1.Text = dr["sales_total"].ToString();
+            }
+
+
+            dr.Close();
+        }
+
+        //function of rtrn sales_card
+        public void Rtrnsales_card_func(string year)
+        {
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@year", year);
+
+            cmd.CommandText = "Dashboard_Cards_salesRtninv";
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Label2.Text = dr["sales_total"].ToString();
             }
 
 
