@@ -137,8 +137,8 @@
                                         </headertemplate>
                                     </dx:gridviewdatadatecolumn>
 
-                                    <dx:gridviewdatadatecolumn fieldname="invtime" caption="الوقت" visibleindex="3">
-                                         <propertiesdateedit displayformatstring=" hh/mm/ss"></propertiesdateedit>
+                                    <dx:gridviewdatatextcolumn fieldname="invtime" caption="الوقت" visibleindex="3">
+                                        
                                     
 
                                         <settings showfilterrowmenu="True"></settings>
@@ -149,7 +149,7 @@
                                         <headertemplate>
                                             <dx:aspxcheckbox id="ASPxCheckBox3" runat="server" text="الوقت" checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
-                                    </dx:gridviewdatadatecolumn>
+                                    </dx:gridviewdatatextcolumn>
 
 
                                     <dx:GridViewDataComboBoxColumn  FieldName="invtype" Caption="نوع الفاتورة" VisibleIndex="4" Visible="true" Width="70">  
