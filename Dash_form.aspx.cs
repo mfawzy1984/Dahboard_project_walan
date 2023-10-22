@@ -27,6 +27,8 @@ namespace Dahboard_project
             // for cards
             Totalsales_card_func(DateTime.Now.Year.ToString());
             Rtrnsales_card_func(DateTime.Now.Year.ToString());
+            totalburchases_card_func(DateTime.Now.Year.ToString());
+            rtnburchases_card_func(DateTime.Now.Year.ToString());
 
 
             // sales barchart
@@ -46,6 +48,8 @@ namespace Dahboard_project
             // for cards
             Totalsales_card_func(CmbYear.Value.ToString());
             Rtrnsales_card_func(CmbYear.Value.ToString());
+            totalburchases_card_func(CmbYear.Value.ToString());
+            rtnburchases_card_func(CmbYear.Value.ToString());
             //for sales_barchart
             sales_BARCHART_func(CmbYear.Value.ToString());
             //for burchases_barchart
@@ -90,6 +94,43 @@ namespace Dahboard_project
 
             dr.Close();
         }
+
+        //function of total burchases_card
+        public void totalburchases_card_func(string year)
+        {
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@year", year);
+
+            cmd.CommandText = "Dashboard_Cards_total_Burshases";
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Label3.Text = dr["sales_total"].ToString();
+            }
+
+
+            dr.Close();
+        }
+
+        //function of rtn burchases_card
+        public void rtnburchases_card_func(string year)
+        {
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@year", year);
+
+            cmd.CommandText = "Dashboard_Cards_Total_RtnBurshases";
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Label4.Text = dr["sales_total"].ToString();
+            }
+
+
+            dr.Close();
+        }
+
 
         //function of sales_barchart
         public void sales_BARCHART_func(string year)

@@ -94,15 +94,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
+                <a href="../Inv_Form.aspx" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>orders</p>
+                  <p>ربط فواتير المبيعات</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="./index2.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>salesorders </p>
+                  <p>ربط مرتجع المبيعات </p>
                 </a>
               </li>
             
@@ -174,7 +174,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                 <asp:Label ID="Label3" runat="server" Width="50px" > 200</asp:Label>
+                 <asp:Label ID="Label3" runat="server" Width="50px" > </asp:Label>
 
                 <p>اجمالي المشتريات </p>
               </div>
@@ -189,7 +189,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                 <asp:Label ID="Label4" runat="server" Width="50px" > 300</asp:Label>
+                 <asp:Label ID="Label4" runat="server" Width="50px" ></asp:Label>
 
                 <p>اجمالي مرتجع المشتريات </p>
               </div>
