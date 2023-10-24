@@ -106,32 +106,6 @@
 
 
 
-        <ClientSideEvents ToolbarItemClick="OnToolbarItemClick" />
-
-                              
-
-
-<Settings ShowFilterBar="Visible" />
-
-
-
-
-
-
- <SettingsPopup>
-            <FilterControl AutoUpdatePosition="False">
-                <SettingsAdaptivity SwitchAtWindowInnerWidth="768" />
-            </FilterControl>
-            <FilterControl>
-                <SettingsAdaptivity Mode="OnWindowInnerWidth" SwitchAtWindowInnerWidth="768" />
-            </FilterControl>
-        </SettingsPopup>
-
-
-
-
-
-
                                 <ClientSideEvents rowclick="function(s, e) {
 	  gvunPost.UnselectRows(selectedRowIndex);
                 selectedRowIndex = e.visibleIndex;
@@ -139,6 +113,26 @@
                                     endcallback="function(s, e) {
 	gvunPost.SelectRowOnPage(selectedRowIndex);
 }" />
+
+                              
+
+
+                                <settings showtitlepanel="True" showfilterrow="True" showfooter="True" ShowGroupPanel="True"></settings>
+
+
+
+
+
+
+<SettingsPopup>
+</SettingsPopup>
+
+
+
+
+
+
+        <ClientSideEvents ToolbarItemClick="OnToolbarItemClick" />
 
                               
 
@@ -154,7 +148,7 @@
 
 
 
-                                <settings showtitlepanel="True" showfilterrow="True" showfooter="True" ShowGroupPanel="True"></settings>
+<Settings ShowFilterBar="Visible" />
 
 
 
@@ -170,8 +164,14 @@
 
 
 
-<SettingsPopup>
-</SettingsPopup>
+ <SettingsPopup>
+            <FilterControl AutoUpdatePosition="False">
+                <SettingsAdaptivity SwitchAtWindowInnerWidth="768" />
+            </FilterControl>
+            <FilterControl>
+                <SettingsAdaptivity Mode="OnWindowInnerWidth" SwitchAtWindowInnerWidth="768" />
+            </FilterControl>
+        </SettingsPopup>
 
 
 
@@ -195,7 +195,7 @@
 
 
 
-                                <settingsloadingpanel text="لحظة من فضلك.." imageposition="Right"></settingsloadingpanel>
+                                <settingsloadingpanel text="لحظة من فضلك.." imageposition="Right" Delay="50"></settingsloadingpanel>
 
                                  <settingstext title=" فواتير المبيعات" grouppanel="اسحب الأعمدة المراد التصنيف بها هنا" groupcontinuedonnextpage="(يستكمل في الصفحة التالية)" emptydatarow="لا يوجد بيانات"></settingstext>
 

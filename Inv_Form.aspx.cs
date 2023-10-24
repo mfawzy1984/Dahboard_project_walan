@@ -18,12 +18,13 @@ namespace Dahboard_project
         {
             if (CmbType2.SelectedIndex == 0 || CmbType2.SelectedIndex == 1)
             {
-                if (gvunPost.VisibleRowCount != 0)
-                { BtnUnPost.Enabled = true; }
-                else { BtnUnPost.Enabled = false; }
+                //if (gvunPost.VisibleRowCount != 0)
+                BtnUnPost.Enabled = true;
+            }
+            else { BtnUnPost.Enabled = false; }
 
             }
-        }
+        
 
         private void ExportGridToExcel()
         {
@@ -54,8 +55,8 @@ namespace Dahboard_project
         {
         
             //GridViewFeaturesHelper.SetupGlobalGridViewBehavior(gvunPost);
-            BtnUnPost.Enabled = true;
-            gvunPost.DataBind();
+            //BtnUnPost.Enabled = true;
+           
 
             if (IsPostBack)
             {
@@ -63,7 +64,7 @@ namespace Dahboard_project
             }
 
             buttonvisibility();
-         
+            gvunPost.DataBind();
 
         }
         protected void CmbType2_SelectedIndexChanged(object sender, EventArgs e)
