@@ -17,6 +17,7 @@ namespace Dahboard_project
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             cnn.ConnectionString = ConfigurationManager.ConnectionStrings["EasyERP"].ConnectionString;
             cnn.Open();
             cmd.Connection = cnn;

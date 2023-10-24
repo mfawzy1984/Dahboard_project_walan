@@ -15,6 +15,24 @@ namespace Dahboard_project
     {
 
         /// <summary>
+        /// scriptmanager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager scriptmanager1;
+
+        /// <summary>
+        /// updatepnl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel updatepnl;
+
+        /// <summary>
         /// RButtonList3 control.
         /// </summary>
         /// <remarks>
@@ -67,5 +85,14 @@ namespace Dahboard_project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource dsItemType;
+
+        /// <summary>
+        /// ASPxGridViewExporter1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridViewExporter ASPxGridViewExporter1;
     }
 }

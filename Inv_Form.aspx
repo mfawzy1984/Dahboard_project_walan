@@ -1,31 +1,52 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Inv_Form.aspx.cs" Inherits="Dahboard_project.Inv_Form" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master"  AutoEventWireup="true" CodeBehind="Inv_Form.aspx.cs" Inherits="Dahboard_project.Inv_Form" %>
 
 <%@ Register Assembly="DevExpress.Web.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">  
+    <!DOCTYPE html>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+<html>
+<head>
+    <title> ربط فواتير المبيعات</title>
+      <link  rel="icon" href="Images/invoice_4306889.png"  type="image/x-icon" />
+      <script type="text/javascript">
+        function OnToolbarItemClick(s, e) {
+            if(IsCustomExportToolbarCommand(e.item.name)) {
+                e.processOnServer=true;
+                e.usePostBack=true;
+            }
+        }
+        function IsCustomExportToolbarCommand(command) {
+            return command == "CustomExportToXLS" || command == "CustomExportToXLSX";
+        }
+      </script>
 </head>
-<body  >
+<body>
  
     <form  runat="server">
-       
+      
+      <div class="content-wrapper">
+
+        <asp:ScriptManager ID="scriptmanager1" runat="server">  
+</asp:ScriptManager>  
+<div>  
+<asp:UpdatePanel ID="updatepnl" runat="server">  
+<ContentTemplate>
+        <div>
             <table id="TABLE2" align="center" dir="rtl">
                 <tbody>
                     <tr>
-                        <td align="center" colspan="3">
-                            <asp:RadioButtonList runat="server" RepeatDirection="Horizontal" AutoPostBack="True" Font-Bold="True" ForeColor="Red" ID="RButtonList3" __designer:wfdid="w1">
+                        <td align="center" colspan="2">
+                            <asp:RadioButtonList runat="server" RepeatDirection="Horizontal" AutoPostBack="True" Font-Bold="True" ForeColor="Black" ID="RButtonList3" __designer:wfdid="w1">
                                 <asp:ListItem Selected="True" Value="0">فواتير الضريبه المبسطه</asp:ListItem>
                                 <asp:ListItem Value="1">الفواتير الضريبيه</asp:ListItem>
                             </asp:RadioButtonList>
                         </td>
                     </tr>
                     <tr>
-                        <td>حاله الفواتير</td>
-                        <td colspan="2">
-                            <dx:aspxcombobox runat="server" selectedindex="0" valuetype="System.String" textfield="CompItmName" valuefield="CompId" imagefolder="App_Themes/Office2003 Blue/{0}/" width="323px" autopostback="True" csspostfix="Office2003_Blue" cssfilepath="App_Themes/Office2003 Blue/{0}/styles.css" clientinstancename="CmbCase" id="CmbType2" __designer:wfdid="w2" onselectedindexchanged="CmbType2_SelectedIndexChanged">
+
+                       <td style="font-weight:500;" >حاله الفواتير : </td>
+                        <td dir="rtl" rowspan="1" >
+                            <dx:aspxcombobox runat="server"  selectedindex="0" valuetype="System.String" textfield="CompItmName" valuefield="CompId" imagefolder="App_Themes/Office2003 Blue/{0}/" width="323px" autopostback="True" csspostfix="Office2003_Blue" cssfilepath="App_Themes/Office2003 Blue/{0}/styles.css" clientinstancename="CmbCase" id="CmbType2" __designer:wfdid="w2" onselectedindexchanged="CmbType2_SelectedIndexChanged">
                                 <clientsideevents textchanged="function(s, e) {
 	gvunPost.PerformCallback(s.GetValue());
 }">
@@ -43,12 +64,28 @@
                         </td>
                     </tr>
                     <tr>
-                        <td   colspan="3">
-                            
-  
 
-                            <dx:ASPxGridView runat="server" clientinstancename="gvunPost" cssfilepath="App_Themes/Office2003 Blue/{0}/styles.css" csspostfix="Office2003_Blue" keyfieldname="Invid" autogeneratecolumns="False" datasourceid="SalesDS2" width="100%" id="gvunPost" __designer:wfdid="w3" onhtmlrowcreated="gvunPost_HtmlRowCreated" EnableTheming="True" Theme="Office2003Blue" >
+<%--                        <td colspan="2">
+   <asp:ImageButton
+        id="WordButton" autopostback="True" runat="server"  onclick="WordButton_Click"
+        ToolTip="حفظ البيانات في ملف وورد" ImageUrl="~/Images/Word.jpg">
+    </asp:ImageButton>
+         <asp:ImageButton
+        id="ExcelButton" runat="server" onclick="ExcelButton_Click"
+        ToolTip="حفظ البيانات في ملف اكسيل" ImageUrl="~/Images/Excel.gif">
+    </asp:ImageButton>
 
+        
+                            </td>--%>
+                    </tr>
+                    <tr>
+                        <td ></td>
+                    </tr>
+                    <tr>
+                      
+                        <td  runat="server" align="center" colspan="2"  >
+
+                            <dx:ASPxGridView align="center"  runat="server" clientinstancename="gvunPost" cssfilepath="App_Themes/Office2003 Blue/{0}/styles.css"   csspostfix="Office2003_Blue" keyfieldname="Invid" autogeneratecolumns="False" datasourceid="SalesDS2"  id="gvunPost" __designer:wfdid="w3" onhtmlrowcreated="gvunPost_HtmlRowCreated"  OnFilterControlColumnsCreated="grid_FilterControlColumnsCreated" EnableRowsCache="false" EnableTheming="True" Theme="Office2003Blue" style="margin-top: 10px;" >
 
 
 
@@ -63,6 +100,37 @@
 
                                     <detailexpandedbutton height="12px" width="11px" url="App_Themes/Office2003 Blue/GridView/gvExpandedButton.png"></detailexpandedbutton>
                                 </images>--%>
+
+
+
+
+
+
+        <ClientSideEvents ToolbarItemClick="OnToolbarItemClick" />
+
+                              
+
+
+<Settings ShowFilterBar="Visible" />
+
+
+
+
+
+
+ <SettingsPopup>
+            <FilterControl AutoUpdatePosition="False">
+                <SettingsAdaptivity SwitchAtWindowInnerWidth="768" />
+            </FilterControl>
+            <FilterControl>
+                <SettingsAdaptivity Mode="OnWindowInnerWidth" SwitchAtWindowInnerWidth="768" />
+            </FilterControl>
+        </SettingsPopup>
+
+
+
+
+
 
                                 <ClientSideEvents rowclick="function(s, e) {
 	  gvunPost.UnselectRows(selectedRowIndex);
@@ -80,10 +148,18 @@
 
                                     <lastpagebutton visible="True"></lastpagebutton>
 
-                                    <summary position="Right" text="صفحة {0} من {1} "></summary>
+                                    <summary text="صفحة {0} من {1} "></summary>
                                 </settingspager>
 
-                                <settings showtitlepanel="True" showfilterrow="True" showfooter="True"></settings>
+
+
+
+                                <settings showtitlepanel="True" showfilterrow="True" showfooter="True" ShowGroupPanel="True"></settings>
+
+
+
+
+
 
                                 <settingsbehavior confirmdelete="True" AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True"></settingsbehavior>
 
@@ -95,8 +171,24 @@
 
 
 <SettingsPopup>
-<FilterControl AutoUpdatePosition="False"></FilterControl>
 </SettingsPopup>
+
+
+
+
+
+
+                                <SettingsSearchPanel  Visible="True" />
+
+
+
+
+
+
+ <SettingsFilterControl ViewMode="VisualAndText" AllowHierarchicalColumns="true" ShowAllDataSourceColumns="true" MaxHierarchyDepth="1" />
+
+
+ <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="DataAware" FileName="data" />
 
 
 
@@ -105,10 +197,10 @@
 
                                 <settingsloadingpanel text="لحظة من فضلك.." imageposition="Right"></settingsloadingpanel>
 
-                                 <settingstext title="" grouppanel="اسحب الأعمدة المراد التصنيف بها هنا" groupcontinuedonnextpage="(يستكمل في الصفحة التالية)" emptydatarow="لا يوجد بيانات"></settingstext>
+                                 <settingstext title=" فواتير المبيعات" grouppanel="اسحب الأعمدة المراد التصنيف بها هنا" groupcontinuedonnextpage="(يستكمل في الصفحة التالية)" emptydatarow="لا يوجد بيانات"></settingstext>
 
                                 <Columns >
-                                    <dx:GridViewCommandColumn  ShowSelectCheckbox="True" VisibleIndex="0" >
+                                    <dx:GridViewCommandColumn  ShowSelectCheckbox="True" VisibleIndex="0" ShowClearFilterButton="True" >
                                     </dx:GridViewCommandColumn>
 
                                     <dx:gridviewdatatextcolumn fieldname="InvNo" caption="رقم الفاتوره" visibleindex="1">
@@ -124,8 +216,12 @@
 
 
                                    
-                                    <dx:gridviewdatadatecolumn fieldname="invdate" caption="التاريخ" visibleindex="2">
-                                        <propertiesdateedit displayformatstring="dd/MM/yyyy"></propertiesdateedit>
+                                    <dx:gridviewdatatextcolumn PropertiesTextEdit-DisplayFormatString="dd/MM/yyyy" fieldname="invdate" caption="التاريخ" visibleindex="2">
+                                        
+
+                                        <PropertiesTextEdit DisplayFormatString="dd/MM/yyyy">
+                                        </PropertiesTextEdit>
+                                        
 
                                         <settings showfilterrowmenu="True"></settings>
 
@@ -135,7 +231,7 @@
                                         <headertemplate>
                                             <dx:aspxcheckbox id="ASPxCheckBox2" runat="server" text="التاريخ" checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
-                                    </dx:gridviewdatadatecolumn>
+                                    </dx:gridviewdatatextcolumn>
 
                                     <dx:gridviewdatatextcolumn fieldname="invtime" caption="الوقت" visibleindex="3">
                                         
@@ -152,10 +248,19 @@
                                     </dx:gridviewdatatextcolumn>
 
 
-                                    <dx:GridViewDataComboBoxColumn  FieldName="invtype" Caption="نوع الفاتورة" VisibleIndex="4" Visible="true" Width="70">  
+                                    <dx:GridViewDataComboBoxColumn  FieldName="invtype" Caption="نوع الفاتورة" VisibleIndex="4" Visible="true" >  
                     <PropertiesComboBox DataSourceID="dsItemType" TextField="invtype" ValueField="invtype" DropDownStyle="DropDownList">  
                     </PropertiesComboBox>  
-                                         <cellstyle horizontalalign="Right"></cellstyle>
+
+                                         <settings showfilterrowmenu="True"></settings>
+
+                                        <headerstyle horizontalalign="Center"></headerstyle>
+
+                                        <cellstyle horizontalalign="Right"></cellstyle>
+                                        <headertemplate>
+                                            <dx:aspxcheckbox id="ASPxCheckBox4" runat="server" text="نوع الفاتوره" checked="True"></dx:aspxcheckbox>
+                                        </headertemplate>
+
                 </dx:GridViewDataComboBoxColumn>
 
 
@@ -254,6 +359,37 @@
                                 </Columns>
 
 
+<Toolbars >
+            <dx:GridViewToolbar ItemAlign="Center">
+                <SettingsAdaptivity Enabled="true" EnableCollapseRootItemsToIcons="true" />
+                <Items>
+                    <dx:GridViewToolbarItem Command="ExportToPdf"  Text=""  Image-IconID="diagramicons_exporttopdf_svg_32x32"    >
+                        <Image IconID="diagramicons_exporttopdf_svg_32x32">
+                        </Image>
+                    </dx:GridViewToolbarItem>
+                    <dx:GridViewToolbarItem Command="ExportToXls" Text=""  Image-IconID="export_exporttoxls_svg_32x32" >
+                    
+                        <Image IconID="export_exporttoxls_svg_32x32">
+                        </Image>
+                    </dx:GridViewToolbarItem>
+                    
+                    <dx:GridViewToolbarItem Command="ExportToDocx" Text=""  Image-IconID="export_exporttodocx_svg_32x32" >
+                   
+                        <Image IconID="export_exporttodocx_svg_32x32">
+                        </Image>
+                    </dx:GridViewToolbarItem>
+                   
+                </Items>
+            </dx:GridViewToolbar>
+        </Toolbars>
+
+<TotalSummary>
+    <dx:ASPxSummaryItem SummaryType="Count" FieldName="InvNo" DisplayFormat="عدد الفواتير= 0"></dx:ASPxSummaryItem>
+</TotalSummary>
+
+
+
+
 
 <Styles CssPostfix="Office2003_Blue" CssFilePath="App_Themes/Office2003 Blue/{0}/styles.css">
 
@@ -275,8 +411,6 @@
 </Styles>
 
 
-
-
                             </dx:ASPxGridView>
 
 
@@ -287,13 +421,13 @@
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="3">
+                        <td colspan="2">
                             <table style="width: 100%" align="center">
                                 <tbody>
                                     <tr align="center">
                                        
                                         <td style="height: 43px" align="center">
-                                            <dx:aspxbutton runat="server" text="ارسال" enabled="False" csspostfix="Office2003_Blue" cssfilepath="App_Themes/Office2003 Blue/{0}/styles.css" width="158px" font-bold="True" forecolor="#0000C0" id="BtnUnPost" __designer:wfdid="w5" ></dx:aspxbutton>
+                                            <dx:aspxbutton runat="server" Enabled="true" text=" ارسال الزكاه والدخل"  csspostfix="Office2003_Blue" cssfilepath="App_Themes/Office2003 Blue/{0}/styles.css" width="500px" font-bold="True" forecolor="#0000C0" id="BtnUnPost" AutoPostBack="true" OnClick="BtnUnPost_Click" __designer:wfdid="w5" ></dx:aspxbutton>
                                         </td>
                                        
                                     </tr>
@@ -303,6 +437,7 @@
                     </tr>
                 </tbody>
             </table>
+            
             <asp:SqlDataSource runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:EasyERP %>" OldValuesParameterFormatString="original_{0}" SelectCommand="GetSalesToZatca" SelectCommandType="StoredProcedure" ID="SalesDS2" __designer:wfdid="w7">
               
                 <SelectParameters>
@@ -316,7 +451,48 @@
             SelectCommand="select distinct  invtype=case invtype when 0 then 'مسددة بالكامل' when 1 then N'مسددة جزئيا' else 'اجل' end
 from Sales_Inv">  
         </asp:SqlDataSource>  
-       
-     </form> 
+        <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" FileName="Data" GridViewID="gvunPost">
+        </dx:ASPxGridViewExporter>
+     </div>
+            </ContentTemplate>  
+</asp:UpdatePanel>  
+</div> 
+  </div>        
+</form>
+  <!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="../plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="../plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="../plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="../plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="../plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="../plugins/moment/moment.min.js"></script>
+<script src="../plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="../plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="../dist/js/pages/dashboard.js"></script>    
 </body>
 </html>
+</asp:Content>

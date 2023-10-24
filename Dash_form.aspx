@@ -1,120 +1,22 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dash_form.aspx.cs" Inherits="Dahboard_project.Dash_form" %>
+﻿<%@ Page Language="C#" MasterPageFile="Site1.Master"  AutoEventWireup="true" CodeBehind="Dash_form.aspx.cs" Inherits="Dahboard_project.Dash_form" %>
 
 <%@ Register Assembly="DevExpress.Web.Bootstrap.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
 
-<%@ Register TagPrefix="dx" Namespace="DevExpress.Web" Assembly="DevExpress.Web.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
-<!DOCTYPE html>
-<html lang="en">
+ 
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">  
+     
+ <!DOCTYPE html>
+
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>EasyERP | Dashboard</title>
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css"/>
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"/>
-  <!-- iCheck -->
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css"/>
-  <!-- JQVMap -->
-  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css"/>
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css"/>
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"/>
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css"/>
-  <!-- summernote -->
-  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css"/>
+      <link  rel="icon" href="Images/icons/logo.ico" type="image/x-icon" />
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
-    <form id="form1" runat="server">
-<div class="wrapper">
 
 
 
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
-    </ul>
 
-
-  </nav>
-
-
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- easyerp Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"/>
-      <span class="brand-text font-weight-light">EasyERP</span>
-    </a>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-
-      <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard menu
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../Inv_Form.aspx" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>ربط فواتير المبيعات</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>ربط مرتجع المبيعات </p>
-                </a>
-              </li>
-            
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
-
+    <form runat="server">
   
 
 
@@ -210,7 +112,8 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">
-                  <i class="fas fa-chart-pie mr-1"></i>
+                 
+                     <i class="fas fa-th mr-1"></i>
                   المبيعات الشهريه
                 </h3>
                
@@ -238,7 +141,7 @@
               <div class="card-header">
                 
                 <h3 class="card-title">
-                        <i class="fas fa-chart-pie mr-1"></i>
+                        <i class="fas fa-th mr-1"></i>
                     المشتريات الشهريه</h3>
 
               
@@ -291,7 +194,7 @@
             <div style="background-color:ghostwhite;">
               <div class="card-header border-0">
                 <h3 class="card-title">
-                  <i class="fas fa-th mr-1"></i>
+                 <i class="fas fa-chart-pie mr-1"></i>
                  المصاريف الشهريه
                 </h3>
 
@@ -509,7 +412,7 @@
 <script src="../dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../dist/js/pages/dashboard.js"></script>
-        </form>
+       
 
  <script>
      var chartlabels1;
@@ -686,8 +589,7 @@
             });
 
         </script>
-
-
-</body>
-
-</html>
+         </form>
+    </html>
+    
+</asp:Content>
