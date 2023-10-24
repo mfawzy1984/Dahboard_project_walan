@@ -1337,6 +1337,7 @@
     <Content Include="Images\word2.jpg" />
     <Content Include="Images\workprogress.jpg" />
     <Content Include="Images\write.jpg" />
+    <Content Include="InvRtn_Form.aspx" />
     <Content Include="Inv_Form.aspx" />
     <Content Include="pages\calendar.html" />
     <Content Include="pages\charts\chartjs.html" />
@@ -3248,6 +3249,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="InvRtn_Form.aspx.cs">
+      <DependentUpon>InvRtn_Form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InvRtn_Form.aspx.designer.cs">
+      <DependentUpon>InvRtn_Form.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inv_Form.aspx.cs">
       <DependentUpon>Inv_Form.aspx</DependentUpon>
