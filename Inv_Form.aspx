@@ -85,7 +85,7 @@
                       
                         <td  runat="server" align="center" colspan="2"  >
 
-                            <dx:ASPxGridView align="center"  runat="server" clientinstancename="gvunPost" cssfilepath="App_Themes/Office2003 Blue/{0}/styles.css"   csspostfix="Office2003_Blue" keyfieldname="Invid" autogeneratecolumns="False" datasourceid="SalesDS2"  id="gvunPost" __designer:wfdid="w3" onhtmlrowcreated="gvunPost_HtmlRowCreated"  OnFilterControlColumnsCreated="grid_FilterControlColumnsCreated" EnableRowsCache="false" EnableTheming="True" Theme="Office2003Blue" style="margin-top: 10px;" >
+                            <dx:ASPxGridView align="center" Width="95%"  runat="server" clientinstancename="gvunPost" cssfilepath="App_Themes/Office2003 Blue/{0}/styles.css"   csspostfix="Office2003_Blue" keyfieldname="Invid" autogeneratecolumns="False" datasourceid="SalesDS2"  id="gvunPost" __designer:wfdid="w3" onhtmlrowcreated="gvunPost_HtmlRowCreated"  OnFilterControlColumnsCreated="grid_FilterControlColumnsCreated" EnableRowsCache="false" EnableTheming="True" Theme="Office2003Blue" style="margin-top: 10px;" >
 
 
 
@@ -296,14 +296,14 @@
                                             <dx:aspxcheckbox id="ASPxCheckBox5" runat="server" text="العميل" checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
                                     </dx:gridviewdatatextcolumn>
-                                    <dx:gridviewdatatextcolumn fieldname="fax" caption="الرقم الضريبي للعميل" visibleindex="6">
+                                    <dx:gridviewdatatextcolumn fieldname="fax" caption="الرقم الضريبي " visibleindex="6">
                                         <settings showfilterrowmenu="True" autofiltercondition="Contains"></settings>
 
                                         <headerstyle horizontalalign="Center"></headerstyle>
 
                                         <cellstyle horizontalalign="Right"></cellstyle>
                                         <headertemplate>
-                                            <dx:aspxcheckbox id="ASPxCheckBox6" runat="server" text="الرقم الضريبي للعميل" checked="True"></dx:aspxcheckbox>
+                                            <dx:aspxcheckbox id="ASPxCheckBox6" runat="server" text="الرقم الضريبي " checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
                                     </dx:gridviewdatatextcolumn>
                                     <dx:gridviewdatatextcolumn fieldname="CompItmName" caption=" حاله الربط" visibleindex="7">

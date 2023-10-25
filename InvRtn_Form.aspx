@@ -37,14 +37,14 @@
                     <tr>
                         <td align="center" colspan="2">
                             <asp:RadioButtonList runat="server" RepeatDirection="Horizontal" AutoPostBack="True" Font-Bold="True" ForeColor="Black" ID="RButtonList3" __designer:wfdid="w1">
-                                <asp:ListItem Selected="True" Value="0">فواتير الضريبه المبسطه</asp:ListItem>
-                                <asp:ListItem Value="1">الفواتير الضريبيه</asp:ListItem>
+                                <asp:ListItem Selected="True" Value="0">حركات دائنه مبسطه</asp:ListItem>
+                                <asp:ListItem Value="1">حركات دائنه ضريبيه</asp:ListItem>
                             </asp:RadioButtonList>
                         </td>
                     </tr>
                     <tr>
 
-                       <td style="font-weight:500;" >حاله الفواتير : </td>
+                       <td style="font-weight:500;" >حاله المرتجع : </td>
                         <td dir="rtl" rowspan="1" >
                             <dx:aspxcombobox runat="server"  selectedindex="0" valuetype="System.String" textfield="CompItmName" valuefield="CompId" imagefolder="App_Themes/Office2003 Blue/{0}/" width="323px" autopostback="True" csspostfix="Office2003_Blue" cssfilepath="App_Themes/Office2003 Blue/{0}/styles.css" clientinstancename="CmbCase" id="CmbType2" __designer:wfdid="w2" onselectedindexchanged="CmbType2_SelectedIndexChanged">
                                 <clientsideevents textchanged="function(s, e) {
@@ -85,7 +85,7 @@
                       
                         <td  runat="server" align="center" colspan="2"  >
 
-                            <dx:ASPxGridView align="center"  runat="server" clientinstancename="gvunPost" cssfilepath="App_Themes/Office2003 Blue/{0}/styles.css"   csspostfix="Office2003_Blue" keyfieldname="RtnInvid" autogeneratecolumns="False" datasourceid="SalesDS2"  id="gvunPost" __designer:wfdid="w3" onhtmlrowcreated="gvunPost_HtmlRowCreated"  OnFilterControlColumnsCreated="grid_FilterControlColumnsCreated" EnableRowsCache="false" EnableTheming="True" Theme="Office2003Blue" style="margin-top: 10px;" >
+                            <dx:ASPxGridView align="center" Width="95%"  runat="server" clientinstancename="gvunPost" cssfilepath="App_Themes/Office2003 Blue/{0}/styles.css"   csspostfix="Office2003_Blue" keyfieldname="RtnInvid" autogeneratecolumns="False" datasourceid="SalesDS2"  id="gvunPost" __designer:wfdid="w3" onhtmlrowcreated="gvunPost_HtmlRowCreated"  OnFilterControlColumnsCreated="grid_FilterControlColumnsCreated" EnableRowsCache="false" EnableTheming="True" Theme="Office2003Blue" style="margin-top: 10px;" >
 
 
 
@@ -197,7 +197,7 @@
 
                                 <settingsloadingpanel text="لحظة من فضلك.." imageposition="Right" Delay="50"></settingsloadingpanel>
 
-                                 <settingstext title=" فواتير  مرتجع المبيعات" grouppanel="اسحب الأعمدة المراد التصنيف بها هنا" groupcontinuedonnextpage="(يستكمل في الصفحة التالية)" emptydatarow="لا يوجد بيانات"></settingstext>
+                                 <settingstext title="   مرتجع المبيعات" grouppanel="اسحب الأعمدة المراد التصنيف بها هنا" groupcontinuedonnextpage="(يستكمل في الصفحة التالية)" emptydatarow="لا يوجد بيانات"></settingstext>
 
                                 <Columns >
                                     <dx:GridViewCommandColumn  ShowSelectCheckbox="True" VisibleIndex="0" ShowClearFilterButton="True" >
@@ -257,7 +257,7 @@
 
 
 
-                                    <dx:GridViewDataComboBoxColumn  FieldName="RtnInvtype" Caption="نوع الفاتورة" VisibleIndex="5" Visible="true" >  
+                                    <dx:GridViewDataComboBoxColumn  FieldName="RtnInvtype" Caption="نوع المرتجع" VisibleIndex="5" Visible="true" >  
                     <PropertiesComboBox DataSourceID="dsItemType" TextField="invtype" ValueField="invtype" DropDownStyle="DropDownList">  
                     </PropertiesComboBox>  
 
@@ -267,7 +267,7 @@
 
                                         <cellstyle horizontalalign="Right"></cellstyle>
                                         <headertemplate>
-                                            <dx:aspxcheckbox id="ASPxCheckBox5" runat="server" text="نوع الفاتوره" checked="True"></dx:aspxcheckbox>
+                                            <dx:aspxcheckbox id="ASPxCheckBox5" runat="server" text="نوع المرتجع" checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
 
                 </dx:GridViewDataComboBoxColumn>
@@ -305,14 +305,14 @@
                                             <dx:aspxcheckbox id="ASPxCheckBox6" runat="server" text="العميل" checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
                                     </dx:gridviewdatatextcolumn>
-                                    <dx:gridviewdatatextcolumn fieldname="fax" caption="الرقم الضريبي للعميل" visibleindex="7">
+                                    <dx:gridviewdatatextcolumn fieldname="fax" caption="الرقم الضريبي " visibleindex="7">
                                         <settings showfilterrowmenu="True" autofiltercondition="Contains"></settings>
 
                                         <headerstyle horizontalalign="Center"></headerstyle>
 
                                         <cellstyle horizontalalign="Right"></cellstyle>
                                         <headertemplate>
-                                            <dx:aspxcheckbox id="ASPxCheckBox7" runat="server" text="الرقم الضريبي للعميل" checked="True"></dx:aspxcheckbox>
+                                            <dx:aspxcheckbox id="ASPxCheckBox7" runat="server" text="الرقم الضريبي " checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
                                     </dx:gridviewdatatextcolumn>
                                     <dx:gridviewdatatextcolumn fieldname="CompItmName" caption=" حاله الربط" visibleindex="8">
