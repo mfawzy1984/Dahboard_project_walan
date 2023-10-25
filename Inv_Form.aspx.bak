@@ -1,12 +1,12 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master"  AutoEventWireup="true" CodeBehind="InvRtn_Form.aspx.cs" Inherits="Dahboard_project.InvRtn_Form" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master"  AutoEventWireup="true" CodeBehind="Inv_Form.aspx.cs" Inherits="Dahboard_project.Inv_Form" %>
 
-<%@ Register Assembly="DevExpress.Web.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">  
     <!DOCTYPE html>
 
 <html>
 <head>
-    <title> ربط مرتجع المبيعات</title>
+    <title> ربط فواتير المبيعات</title>
       <link  rel="icon" href="Images/invoice_4306889.png"  type="image/x-icon" />
       <script type="text/javascript">
         function OnToolbarItemClick(s, e) {
@@ -37,14 +37,14 @@
                     <tr>
                         <td align="center" colspan="2">
                             <asp:RadioButtonList runat="server" RepeatDirection="Horizontal" AutoPostBack="True" Font-Bold="True" ForeColor="Black" ID="RButtonList3" __designer:wfdid="w1">
-                                <asp:ListItem Selected="True" Value="0">حركات دائنه مبسطه</asp:ListItem>
-                                <asp:ListItem Value="1">حركات دائنه ضريبيه</asp:ListItem>
+                                <asp:ListItem Selected="True" Value="0">فواتير الضريبه المبسطه</asp:ListItem>
+                                <asp:ListItem Value="1">الفواتير الضريبيه</asp:ListItem>
                             </asp:RadioButtonList>
                         </td>
                     </tr>
                     <tr>
 
-                       <td style="font-weight:500;" >حاله المرتجع : </td>
+                       <td style="font-weight:500;" >حاله الفواتير : </td>
                         <td dir="rtl" rowspan="1" >
                             <dx:aspxcombobox runat="server"  selectedindex="0" valuetype="System.String" textfield="CompItmName" valuefield="CompId" imagefolder="App_Themes/Office2003 Blue/{0}/" width="323px" autopostback="True" csspostfix="Office2003_Blue" cssfilepath="App_Themes/Office2003 Blue/{0}/styles.css" clientinstancename="CmbCase" id="CmbType2" __designer:wfdid="w2" onselectedindexchanged="CmbType2_SelectedIndexChanged">
                                 <clientsideevents textchanged="function(s, e) {
@@ -85,7 +85,7 @@
                       
                         <td  runat="server" align="center" colspan="2"  >
 
-                            <dx:ASPxGridView align="center" Width="90%"  runat="server" clientinstancename="gvunPost" cssfilepath="App_Themes/Office2003 Blue/{0}/styles.css"   csspostfix="Office2003_Blue" keyfieldname="RtnInvid" autogeneratecolumns="False" datasourceid="SalesDS2"  id="gvunPost" __designer:wfdid="w3" onhtmlrowcreated="gvunPost_HtmlRowCreated"  OnFilterControlColumnsCreated="grid_FilterControlColumnsCreated" EnableRowsCache="false" EnableTheming="True" Theme="Office2003Blue" style="margin-top: 10px;" >
+                            <dx:ASPxGridView align="center" Width="95%"  runat="server" clientinstancename="gvunPost" cssfilepath="App_Themes/Office2003 Blue/{0}/styles.css"   csspostfix="Office2003_Blue" keyfieldname="Invid" autogeneratecolumns="False" datasourceid="SalesDS2"  id="gvunPost" __designer:wfdid="w3" onhtmlrowcreated="gvunPost_HtmlRowCreated"  OnFilterControlColumnsCreated="grid_FilterControlColumnsCreated" EnableRowsCache="false" EnableTheming="True" Theme="Office2003Blue" style="margin-top: 10px;" >
 
 
 
@@ -197,34 +197,26 @@
 
                                 <settingsloadingpanel text="لحظة من فضلك.." imageposition="Right" Delay="50"></settingsloadingpanel>
 
-                                 <settingstext title="   مرتجع المبيعات" grouppanel="اسحب الأعمدة المراد التصنيف بها هنا" groupcontinuedonnextpage="(يستكمل في الصفحة التالية)" emptydatarow="لا يوجد بيانات"></settingstext>
+                                 <settingstext title=" فواتير المبيعات" grouppanel="اسحب الأعمدة المراد التصنيف بها هنا" groupcontinuedonnextpage="(يستكمل في الصفحة التالية)" emptydatarow="لا يوجد بيانات"></settingstext>
 
                                 <Columns >
                                     <dx:GridViewCommandColumn  ShowSelectCheckbox="True" VisibleIndex="0" ShowClearFilterButton="True" >
                                     </dx:GridViewCommandColumn>
 
-                                    <dx:gridviewdatatextcolumn fieldname="RtnInvNo" caption="رقم المرتجع" visibleindex="1">
+                                    <dx:gridviewdatatextcolumn fieldname="InvNo" caption="رقم الفاتوره" visibleindex="1">
                                         <settings showfilterrowmenu="True" autofiltercondition="Contains"></settings>
 
                                         <headerstyle horizontalalign="Center"></headerstyle>
 
                                         <cellstyle horizontalalign="Right"></cellstyle>
                                         <headertemplate>
-                                            <dx:aspxcheckbox id="ASPxCheckBox1" runat="server" text="رقم المرتجع" checked="True"></dx:aspxcheckbox>
+                                            <dx:aspxcheckbox id="ASPxCheckBox1" runat="server" text="رقم الفاتوره" checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
                                     </dx:gridviewdatatextcolumn>
 
-                                    <dx:gridviewdatatextcolumn fieldname="InvNo" caption="رقم الفاتوره" visibleindex="2">
-                                        
 
-                                        <settings showfilterrowmenu="True" autofiltercondition="Equals"></settings>
-                                        <headertemplate>
-                                            <dx:aspxcheckbox id="ASPxCheckBox2" runat="server" text="رقم الفاتوره" checked="True"></dx:aspxcheckbox>
-                                        </headertemplate>
-                                          <cellstyle horizontalalign="Right"></cellstyle>
-                                    </dx:gridviewdatatextcolumn>
                                    
-                                    <dx:gridviewdatatextcolumn PropertiesTextEdit-DisplayFormatString="dd/MM/yyyy" fieldname="RtnInvdate" caption="التاريخ" visibleindex="3">
+                                    <dx:gridviewdatatextcolumn PropertiesTextEdit-DisplayFormatString="dd/MM/yyyy" fieldname="invdate" caption="التاريخ" visibleindex="2">
                                         
 
                                         <PropertiesTextEdit DisplayFormatString="dd/MM/yyyy">
@@ -237,11 +229,11 @@
 
                                         <cellstyle horizontalalign="Right"></cellstyle>
                                         <headertemplate>
-                                            <dx:aspxcheckbox id="ASPxCheckBox3" runat="server" text="التاريخ" checked="True"></dx:aspxcheckbox>
+                                            <dx:aspxcheckbox id="ASPxCheckBox2" runat="server" text="التاريخ" checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
                                     </dx:gridviewdatatextcolumn>
 
-                                    <dx:gridviewdatatextcolumn fieldname="invtime" caption="الوقت" visibleindex="4">
+                                    <dx:gridviewdatatextcolumn fieldname="invtime" caption="الوقت" visibleindex="3">
                                         
                                     
 
@@ -251,13 +243,12 @@
 
                                         <cellstyle horizontalalign="Right"></cellstyle>
                                         <headertemplate>
-                                            <dx:aspxcheckbox id="ASPxCheckBox4" runat="server" text="الوقت" checked="True"></dx:aspxcheckbox>
+                                            <dx:aspxcheckbox id="ASPxCheckBox3" runat="server" text="الوقت" checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
                                     </dx:gridviewdatatextcolumn>
 
 
-
-                                    <dx:GridViewDataComboBoxColumn  FieldName="RtnInvtype" Caption="نوع المرتجع" VisibleIndex="5" Visible="true" >  
+                                    <dx:GridViewDataComboBoxColumn  FieldName="invtype" Caption="نوع الفاتورة" VisibleIndex="4" Visible="true" >  
                     <PropertiesComboBox DataSourceID="dsItemType" TextField="invtype" ValueField="invtype" DropDownStyle="DropDownList">  
                     </PropertiesComboBox>  
 
@@ -267,7 +258,7 @@
 
                                         <cellstyle horizontalalign="Right"></cellstyle>
                                         <headertemplate>
-                                            <dx:aspxcheckbox id="ASPxCheckBox5" runat="server" text="نوع المرتجع" checked="True"></dx:aspxcheckbox>
+                                            <dx:aspxcheckbox id="ASPxCheckBox4" runat="server" text="نوع الفاتوره" checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
 
                 </dx:GridViewDataComboBoxColumn>
@@ -295,27 +286,27 @@
 
                                    
 
-                                    <dx:gridviewdatatextcolumn fieldname="custname" caption="العميل" visibleindex="6">
+                                    <dx:gridviewdatatextcolumn fieldname="custname" caption="العميل" visibleindex="5">
                                         <settings showfilterrowmenu="True" autofiltercondition="Contains"></settings>
 
                                         <headerstyle horizontalalign="Center"></headerstyle>
 
                                         <cellstyle horizontalalign="Right"></cellstyle>
                                         <headertemplate>
-                                            <dx:aspxcheckbox id="ASPxCheckBox6" runat="server" text="العميل" checked="True"></dx:aspxcheckbox>
+                                            <dx:aspxcheckbox id="ASPxCheckBox5" runat="server" text="العميل" checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
                                     </dx:gridviewdatatextcolumn>
-                                    <dx:gridviewdatatextcolumn fieldname="fax" caption="الرقم الضريبي " visibleindex="7">
+                                    <dx:gridviewdatatextcolumn fieldname="fax" caption="الرقم الضريبي " visibleindex="6">
                                         <settings showfilterrowmenu="True" autofiltercondition="Contains"></settings>
 
                                         <headerstyle horizontalalign="Center"></headerstyle>
 
                                         <cellstyle horizontalalign="Right"></cellstyle>
                                         <headertemplate>
-                                            <dx:aspxcheckbox id="ASPxCheckBox7" runat="server" text="الرقم الضريبي " checked="True"></dx:aspxcheckbox>
+                                            <dx:aspxcheckbox id="ASPxCheckBox6" runat="server" text="الرقم الضريبي " checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
                                     </dx:gridviewdatatextcolumn>
-                                    <dx:gridviewdatatextcolumn fieldname="CompItmName" caption=" حاله الربط" visibleindex="8">
+                                    <dx:gridviewdatatextcolumn fieldname="CompItmName" caption=" حاله الربط" visibleindex="7">
                                        
 
                                         <settings showfilterrowmenu="True" autofiltercondition="Equals"></settings>
@@ -324,44 +315,44 @@
 
                                         <cellstyle horizontalalign="Right"></cellstyle>
                                         <headertemplate>
-                                            <dx:aspxcheckbox id="ASPxCheckBox8" runat="server" text="حاله الربط" checked="True"></dx:aspxcheckbox>
+                                            <dx:aspxcheckbox id="ASPxCheckBox7" runat="server" text="حاله الربط" checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
                                     </dx:gridviewdatatextcolumn>
 
                                    
 
-                                    <dx:gridviewdatatextcolumn fieldname="TaxAdd" caption="مبلغ شامل الضريبه" visibleindex="9">
+                                    <dx:gridviewdatatextcolumn fieldname="TaxAdd" caption="مبلغ شامل الضريبه" visibleindex="8">
                                         
 
                                         <settings showfilterrowmenu="True" autofiltercondition="Equals"></settings>
                                         <headertemplate>
-                                            <dx:aspxcheckbox id="ASPxCheckBox9" runat="server" text="مبلغ شامل الضريبه" checked="True"></dx:aspxcheckbox>
+                                            <dx:aspxcheckbox id="ASPxCheckBox8" runat="server" text="مبلغ شامل الضريبه" checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
                                          <cellstyle horizontalalign="Right"></cellstyle>
                                     </dx:gridviewdatatextcolumn>
-                                    <dx:gridviewdatatextcolumn fieldname="FinalValue" caption="مبلغ الضريبه" visibleindex="10">
+                                    <dx:gridviewdatatextcolumn fieldname="FinalValue" caption="مبلغ الضريبه" visibleindex="9">
                                         
 
                                         <settings showfilterrowmenu="True" autofiltercondition="Equals"></settings>
                                         <headertemplate>
-                                            <dx:aspxcheckbox id="ASPxCheckBox10" runat="server" text="مبلغ الضريبه" checked="True"></dx:aspxcheckbox>
+                                            <dx:aspxcheckbox id="ASPxCheckBox9" runat="server" text="مبلغ الضريبه" checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
                                          <cellstyle horizontalalign="Right"></cellstyle>
                                     </dx:gridviewdatatextcolumn>
 
-                                     <dx:gridviewdatatextcolumn fieldname="notes" caption="ملاحظات" visibleindex="11">
+                                     <dx:gridviewdatatextcolumn fieldname="notes" caption="ملاحظات" visibleindex="10">
                                         
 
                                         <settings showfilterrowmenu="True" autofiltercondition="Equals"></settings>
                                         <headertemplate>
-                                            <dx:aspxcheckbox id="ASPxCheckBox11" runat="server" text="ملاحظات" checked="True"></dx:aspxcheckbox>
+                                            <dx:aspxcheckbox id="ASPxCheckBox10" runat="server" text="ملاحظات" checked="True"></dx:aspxcheckbox>
                                         </headertemplate>
                                           <cellstyle horizontalalign="Right"></cellstyle>
                                     </dx:gridviewdatatextcolumn>
 
-              
+             
 
-                                    <dx:gridviewdatatextcolumn caption=" " visibleindex="13"></dx:gridviewdatatextcolumn>
+                                    <dx:gridviewdatatextcolumn caption=" " visibleindex="12"></dx:gridviewdatatextcolumn>
 
 
 
@@ -447,7 +438,7 @@
                 </tbody>
             </table>
             
-            <asp:SqlDataSource runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:EasyERP %>" OldValuesParameterFormatString="original_{0}" SelectCommand="GetRtnSalesToZatca" SelectCommandType="StoredProcedure" ID="SalesDS2" __designer:wfdid="w7">
+            <asp:SqlDataSource runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:EasyERP %>" OldValuesParameterFormatString="original_{0}" SelectCommand="GetSalesToZatca" SelectCommandType="StoredProcedure" ID="SalesDS2" __designer:wfdid="w7">
               
                 <SelectParameters>
                     <asp:ControlParameter ControlID="RButtonList3" PropertyName="SelectedValue" Name="InvType" Type="Int16"></asp:ControlParameter>
