@@ -36,7 +36,7 @@
                 <tbody>
                     <tr>
                         <td align="center" colspan="2">
-                            <asp:RadioButtonList runat="server" RepeatDirection="Horizontal" AutoPostBack="True" Font-Bold="True" ForeColor="Black" ID="RButtonList3" __designer:wfdid="w1">
+                            <asp:RadioButtonList runat="server" RepeatDirection="Horizontal" AutoPostBack="True" Font-Bold="True" ForeColor="Black" ID="RButtonList3" __designer:wfdid="w1" OnSelectedIndexChanged="RButtonList3_SelectedIndexChanged">
                                 <asp:ListItem Selected="True" Value="0">حركات دائنه مبسطه</asp:ListItem>
                                 <asp:ListItem Value="1">حركات دائنه ضريبيه</asp:ListItem>
                             </asp:RadioButtonList>

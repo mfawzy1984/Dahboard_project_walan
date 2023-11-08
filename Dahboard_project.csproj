@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Data.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -53,10 +57,39 @@
     <Reference Include="DevExpress.Web.Resources.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="IKVM.OpenJDK.Core, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="saxon-he-10.8, Version=10.8.0.0, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\saxon-he-10.8.dll</HintPath>
+    </Reference>
+    <Reference Include="saxon-he-api-10.8, Version=10.8.0.0, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\saxon-he-api-10.8.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -905,6 +938,7 @@
     <Content Include="build\npm\Plugins.js" />
     <Content Include="build\npm\Publish.js" />
     <Content Include="build\npm\vnu-jar.js" />
+    <Content Include="cert\secret.txt" />
     <Content Include="Dash_form.aspx" />
     <Content Include="dist\css\adminlte.css" />
     <Content Include="dist\css\adminlte.min.css" />
@@ -3478,49 +3512,23 @@
     <Content Include="docs\upgrade-guide.md" />
     <Content Include="docs\_config.yml" />
     <Content Include="App_Themes\BlackGlass\Editors\Thumbs.db" />
-    <Content Include="App_Themes\BlackGlass\Editors\vssver2.scc" />
     <Content Include="App_Themes\BlackGlass\GridView\Thumbs.db" />
-    <Content Include="App_Themes\BlackGlass\GridView\vssver2.scc" />
     <Content Include="App_Themes\BlackGlass\Web\Thumbs.db" />
-    <Content Include="App_Themes\BlackGlass\Web\vssver2.scc" />
-    <Content Include="App_Themes\Black\Web\vssver2.scc" />
     <Content Include="App_Themes\Blue %28Horizontal orientation%29\Web\Thumbs.db" />
-    <Content Include="App_Themes\Blue %28Horizontal orientation%29\Web\vssver2.scc" />
     <Content Include="App_Themes\Blue\Web\Thumbs.db" />
-    <Content Include="App_Themes\Blue\Web\vssver2.scc" />
     <Content Include="App_Themes\Glass\Editors\Thumbs.db" />
-    <Content Include="App_Themes\Glass\Editors\vssver2.scc" />
     <Content Include="App_Themes\Glass\GridView\Thumbs.db" />
-    <Content Include="App_Themes\Glass\GridView\vssver2.scc" />
     <Content Include="App_Themes\Glass\Web\Thumbs.db" />
-    <Content Include="App_Themes\Glass\Web\vssver2.scc" />
-    <Content Include="App_Themes\MacOS\Web\vssver2.scc" />
     <Content Include="App_Themes\Office2003 Blue\Editors\Thumbs.db" />
-    <Content Include="App_Themes\Office2003 Blue\Editors\vssver2.scc" />
     <Content Include="App_Themes\Office2003 Blue\GridView\Thumbs.db" />
-    <Content Include="App_Themes\Office2003 Blue\GridView\vssver2.scc" />
     <Content Include="App_Themes\Office2003 Blue\PivotGrid\Thumbs.db" />
-    <Content Include="App_Themes\Office2003 Blue\PivotGrid\vssver2.scc" />
     <Content Include="App_Themes\Office2003 Blue\TreeList\CssImages\Thumbs.db" />
-    <Content Include="App_Themes\Office2003 Blue\TreeList\CssImages\vssver2.scc" />
     <Content Include="App_Themes\Office2003 Blue\TreeList\Thumbs.db" />
-    <Content Include="App_Themes\Office2003 Blue\TreeList\vssver2.scc" />
     <Content Include="App_Themes\Office2003 Blue\Web\Thumbs.db" />
-    <Content Include="App_Themes\Office2003 Blue\Web\vssver2.scc" />
-    <Content Include="App_Themes\Office2003 Olive\Editors\vssver2.scc" />
-    <Content Include="App_Themes\Office2003 Olive\GridView\vssver2.scc" />
-    <Content Include="App_Themes\Office2003 Olive\Web\vssver2.scc" />
-    <Content Include="App_Themes\Plastic Blue\Editors\vssver2.scc" />
-    <Content Include="App_Themes\Plastic Blue\GridView\vssver2.scc" />
-    <Content Include="App_Themes\Plastic Blue\Web\vssver2.scc" />
     <Content Include="Images\buttons1.psd" />
-    <Content Include="Images\icons\vssver2.scc" />
     <Content Include="Images\PageBorders\Thumbs.db" />
-    <Content Include="Images\PageBorders\vssver2.scc" />
     <Content Include="Images\Thumbs.db" />
     <Content Include="Images\Toolbar\Thumbs.db" />
-    <Content Include="Images\Toolbar\vssver2.scc" />
-    <Content Include="Images\vssver2.scc" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css.map" />
     <Content Include="plugins\bootstrap-colorpicker\js\bootstrap-colorpicker.js.map" />
@@ -3585,6 +3593,10 @@
     <Content Include="plugins\summernote\summernote.min.js.map" />
     <Content Include="plugins\toastr\toastr.js.map" />
     <Content Include="Site1.Master" />
+    <Content Include="cert\cert - Copy.cer" />
+    <Content Include="cert\cert.pem" />
+    <Content Include="cert\csr.csr" />
+    <Content Include="cert\key.pem" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
