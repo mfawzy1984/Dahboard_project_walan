@@ -1,8 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Dahboard_project.Site1" %>
 
-<%@ Register Assembly="DevExpress.Web.Bootstrap.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.Bootstrap.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
 
-<%@ Register TagPrefix="dx" Namespace="DevExpress.Web" Assembly="DevExpress.Web.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Web" Assembly="DevExpress.Web.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,10 +73,13 @@ var nUrl = url.substr(url.lastIndexOf('/')+1); // Get the page name from url
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- easyerp Logo -->
+      <div style="display:flex;">
+      <div style="margin-top: 5px; border-radius:50px; background:white; width: 60px; height: 46px; display: flex; justify-content: center; align-items: center;"> <img src="Images/logo.png" alt="AdminLTE Logo" style="width:40px;"/></div>
     <a href="index3.html" class="brand-link">
-      <img src="Images/icons/logo.ico" alt="AdminLTE Logo" class="brand-image img-circle elevation-5" style="opacity: .8;background:white; width:40px;"/>
-      <span class="brand-text font-weight-light">EasyERP</span>
+      <span class="">EasyERP</span>
     </a>
+
+      </div>
 
     <!-- Sidebar -->
     <div class="sidebar">
