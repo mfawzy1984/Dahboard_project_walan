@@ -905,6 +905,7 @@
     <Content Include="build\npm\Plugins.js" />
     <Content Include="build\npm\Publish.js" />
     <Content Include="build\npm\vnu-jar.js" />
+    <Content Include="cert\secret.txt" />
     <Content Include="Dash_form.aspx" />
     <Content Include="dist\css\adminlte.css" />
     <Content Include="dist\css\adminlte.min.css" />
@@ -3601,6 +3602,10 @@
     <Content Include="plugins\summernote\summernote.min.js.map" />
     <Content Include="plugins\toastr\toastr.js.map" />
     <Content Include="Site1.Master" />
+    <Content Include="cert\cert - Copy.cer" />
+    <Content Include="cert\cert.pem" />
+    <Content Include="cert\csr.csr" />
+    <Content Include="cert\key.pem" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -3611,6 +3616,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Invoices\Normal\Simplified\Credit\" />
+    <Folder Include="Invoices\Normal\Simplified\Debit\" />
+    <Folder Include="Invoices\Normal\Standard\Credit\" />
+    <Folder Include="Invoices\Normal\Standard\Debit\" />
+    <Folder Include="Invoices\Normal\Standard\Invoices\" />
+    <Folder Include="Invoices\Signed\Simplified\Credit\" />
+    <Folder Include="Invoices\Signed\Simplified\Debit\" />
+    <Folder Include="Invoices\Signed\Standard\Credit\" />
+    <Folder Include="Invoices\Signed\Standard\Debit\" />
+    <Folder Include="Invoices\Signed\Standard\Invoices\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
