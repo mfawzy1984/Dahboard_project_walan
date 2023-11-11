@@ -43,53 +43,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\BouncyCastle.Crypto.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.Data.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Office.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.ASPxThemes.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.Bootstrap.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.Resources.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Web.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="IKVM.OpenJDK.Core, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\IKVM.OpenJDK.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="IKVM.OpenJDK.Text, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\IKVM.OpenJDK.Text.dll</HintPath>
-    </Reference>
-    <Reference Include="IKVM.OpenJDK.Util, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\IKVM.OpenJDK.Util.dll</HintPath>
-    </Reference>
-    <Reference Include="IKVM.OpenJDK.XML.API, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\IKVM.OpenJDK.XML.API.dll</HintPath>
-    </Reference>
-    <Reference Include="IKVM.Runtime, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\IKVM.Runtime.dll</HintPath>
-    </Reference>
+    <Reference Include="DevExpress.Data.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Bootstrap.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="saxon-he-10.8, Version=10.8.0.0, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\saxon-he-10.8.dll</HintPath>
-    </Reference>
-    <Reference Include="saxon-he-api-10.8, Version=10.8.0.0, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\saxon-he-api-10.8.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -107,10 +74,10 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="ZatcaIntegrationSDK">
-      <HintPath>..\Dashboard\mfawzy1984\Dahboard_project_walan\bin\ZatcaIntegrationSDK.dll</HintPath>
+      <HintPath>D:\DashBoardNew\bin\ZatcaIntegrationSDK.dll</HintPath>
     </Reference>
     <Reference Include="zxing">
-      <HintPath>..\Dashboard\mfawzy1984\Dahboard_project_walan\bin\zxing.dll</HintPath>
+      <HintPath>D:\DashBoardNew\bin\zxing.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -1230,6 +1197,11 @@
     <Content Include="Images\menu.gif" />
     <Content Include="Images\menuE.gif" />
     <Content Include="Images\mm.png" />
+    <Content Include="Images\moreinfo.jpg" />
+    <Content Include="Images\moreinfo2.jpg" />
+    <Content Include="Images\myicon.png" />
+    <Content Include="Images\myicon2.png" />
+    <Content Include="Images\myicon3.png" />
     <Content Include="Images\nav_under.gif" />
     <Content Include="Images\new.gif" />
     <Content Include="Images\new2.gif" />
@@ -1288,9 +1260,12 @@
     <Content Include="Images\save2.gif" />
     <Content Include="Images\search.gif" />
     <Content Include="Images\search2.gif" />
+    <Content Include="Images\searchh.gif" />
     <Content Include="Images\select.jpg" />
     <Content Include="Images\send-2.gif" />
     <Content Include="Images\send.gif" />
+    <Content Include="Images\ser1.png" />
+    <Content Include="Images\ser2.png" />
     <Content Include="Images\serial.png" />
     <Content Include="Images\Shape01.png" />
     <Content Include="Images\Shape03.png" />
@@ -3273,6 +3248,7 @@
     <Content Include="plugins\uplot\uPlot.iife.js" />
     <Content Include="plugins\uplot\uPlot.iife.min.js" />
     <Content Include="plugins\uplot\uPlot.min.css" />
+    <Content Include="Popupinfo.aspx" />
     <Content Include="start_page.aspx" />
     <Content Include="testform.aspx" />
     <Content Include="Web.config" />
@@ -3303,6 +3279,13 @@
       <DependentUpon>Inv_Form.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\dataclass.cs" />
+    <Compile Include="Popupinfo.aspx.cs">
+      <DependentUpon>Popupinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Popupinfo.aspx.designer.cs">
+      <DependentUpon>Popupinfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
@@ -3511,23 +3494,49 @@
     <Content Include="docs\upgrade-guide.md" />
     <Content Include="docs\_config.yml" />
     <Content Include="App_Themes\BlackGlass\Editors\Thumbs.db" />
+    <Content Include="App_Themes\BlackGlass\Editors\vssver2.scc" />
     <Content Include="App_Themes\BlackGlass\GridView\Thumbs.db" />
+    <Content Include="App_Themes\BlackGlass\GridView\vssver2.scc" />
     <Content Include="App_Themes\BlackGlass\Web\Thumbs.db" />
+    <Content Include="App_Themes\BlackGlass\Web\vssver2.scc" />
+    <Content Include="App_Themes\Black\Web\vssver2.scc" />
     <Content Include="App_Themes\Blue %28Horizontal orientation%29\Web\Thumbs.db" />
+    <Content Include="App_Themes\Blue %28Horizontal orientation%29\Web\vssver2.scc" />
     <Content Include="App_Themes\Blue\Web\Thumbs.db" />
+    <Content Include="App_Themes\Blue\Web\vssver2.scc" />
     <Content Include="App_Themes\Glass\Editors\Thumbs.db" />
+    <Content Include="App_Themes\Glass\Editors\vssver2.scc" />
     <Content Include="App_Themes\Glass\GridView\Thumbs.db" />
+    <Content Include="App_Themes\Glass\GridView\vssver2.scc" />
     <Content Include="App_Themes\Glass\Web\Thumbs.db" />
+    <Content Include="App_Themes\Glass\Web\vssver2.scc" />
+    <Content Include="App_Themes\MacOS\Web\vssver2.scc" />
     <Content Include="App_Themes\Office2003 Blue\Editors\Thumbs.db" />
+    <Content Include="App_Themes\Office2003 Blue\Editors\vssver2.scc" />
     <Content Include="App_Themes\Office2003 Blue\GridView\Thumbs.db" />
+    <Content Include="App_Themes\Office2003 Blue\GridView\vssver2.scc" />
     <Content Include="App_Themes\Office2003 Blue\PivotGrid\Thumbs.db" />
+    <Content Include="App_Themes\Office2003 Blue\PivotGrid\vssver2.scc" />
     <Content Include="App_Themes\Office2003 Blue\TreeList\CssImages\Thumbs.db" />
+    <Content Include="App_Themes\Office2003 Blue\TreeList\CssImages\vssver2.scc" />
     <Content Include="App_Themes\Office2003 Blue\TreeList\Thumbs.db" />
+    <Content Include="App_Themes\Office2003 Blue\TreeList\vssver2.scc" />
     <Content Include="App_Themes\Office2003 Blue\Web\Thumbs.db" />
+    <Content Include="App_Themes\Office2003 Blue\Web\vssver2.scc" />
+    <Content Include="App_Themes\Office2003 Olive\Editors\vssver2.scc" />
+    <Content Include="App_Themes\Office2003 Olive\GridView\vssver2.scc" />
+    <Content Include="App_Themes\Office2003 Olive\Web\vssver2.scc" />
+    <Content Include="App_Themes\Plastic Blue\Editors\vssver2.scc" />
+    <Content Include="App_Themes\Plastic Blue\GridView\vssver2.scc" />
+    <Content Include="App_Themes\Plastic Blue\Web\vssver2.scc" />
     <Content Include="Images\buttons1.psd" />
+    <Content Include="Images\icons\vssver2.scc" />
     <Content Include="Images\PageBorders\Thumbs.db" />
+    <Content Include="Images\PageBorders\vssver2.scc" />
     <Content Include="Images\Thumbs.db" />
     <Content Include="Images\Toolbar\Thumbs.db" />
+    <Content Include="Images\Toolbar\vssver2.scc" />
+    <Content Include="Images\vssver2.scc" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.css.map" />
     <Content Include="plugins\bootstrap-colorpicker\css\bootstrap-colorpicker.min.css.map" />
     <Content Include="plugins\bootstrap-colorpicker\js\bootstrap-colorpicker.js.map" />

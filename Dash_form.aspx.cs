@@ -25,6 +25,15 @@ namespace Dahboard_project
 
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
+            string selectedItemValue = null;
+
+            if (CmbYear.SelectedIndex >= 0)
+            {
+                CmbYear.DataBind();
+                selectedItemValue = CmbYear.Value.ToString();
+                Session["LoginTime"] = selectedItemValue;
+            }
+
             // for cards
             Totalsales_card_func(DateTime.Now.Year.ToString());
             Rtrnsales_card_func(DateTime.Now.Year.ToString());
