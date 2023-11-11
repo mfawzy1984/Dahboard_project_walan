@@ -1,6 +1,8 @@
 ﻿<%@ Page Language="C#" MasterPageFile="Site1.Master"  AutoEventWireup="true" CodeBehind="Dash_form.aspx.cs" Inherits="Dahboard_project.Dash_form" %>
 
-<%@ Register Assembly="DevExpress.Web.Bootstrap.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<%@ Register Assembly="DevExpress.Web.Bootstrap.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
 
  
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">  
@@ -11,6 +13,17 @@
 <head>
   <title>EasyERP | Dashboard</title>
       <link  rel="icon" href="Images/icons/logo.ico" type="image/x-icon" />
+    <style>
+
+
+/*        #ASPxGridView1 .columnHeaderStyle {
+    background-color: yellow;
+    color: steelblue;
+    border:hidden;
+}*/
+
+
+    </style>
 </head>
 
 
@@ -29,7 +42,7 @@
           <div class="col-sm-6">
                
               <h5 class="m-0">  السنه الماليه</h5>
-              <dx:BootstrapComboBox  id="CmbYear" runat="server" textfield="years" valuefield="years" datasourceid="SqlYear" selectedindex="0" valuetype="System.String" ontextchanged="CmbYear_TextChanged" autopostback="true" ></dx:BootstrapComboBox>
+              <dx:BootstrapComboBox ClientInstanceName="CmbYear"  id="CmbYear" runat="server" textfield="years" valuefield="years" datasourceid="SqlYear" selectedindex="0" valuetype="System.String" ontextchanged="CmbYear_TextChanged" autopostback="true" ></dx:BootstrapComboBox>
               </div>
        
         </div>
@@ -53,7 +66,9 @@
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer"> More Info <asp:ImageButton ID="ImageButton1" onclientclick="Popupinfo(1);return false;" runat="server"  Width="30px" Height="30px"  ImageUrl="~/images/ser2.png "
+                            ToolTip="more info  "    /></a>
+                
             </div>
           </div>
           <!-- ./col -->
@@ -68,7 +83,12 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">
+                   More Info
+                     <asp:ImageButton ID="ImageButton2" onclientclick="Popupinfo(2);return false;" runat="server" Width="30px" Height="30px" ImageUrl="~/images/ser2.png "
+                            ToolTip="more info  " />
+                 
+              </a>
             </div>
           </div>
           <!-- ./col -->
@@ -83,7 +103,13 @@
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                
+              <a href="#" class="small-box-footer">
+                   More Info
+                  <asp:ImageButton ID="BtnSearchItem" onclientclick="Popupinfo(3);return false;" runat="server" Width="30px" Height="30px" ImageUrl="~/images/ser2.png "
+                            ToolTip="more info  " />
+                 
+                </a>
             </div>
           </div>
           <!-- ./col -->
@@ -98,7 +124,10 @@
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">  
+                   More Info
+                  <asp:ImageButton ID="ImageButton3" onclientclick="Popupinfo(4);return false;" runat="server"  Width="30px" Height="30px"  ImageUrl="~/images/ser2.png "
+                            ToolTip="more info" />  </a>
             </div>
           </div>
           <!-- ./col -->
@@ -146,6 +175,8 @@
 
               
               </div>
+
+    
             
  <div class="card-body">
                   <!-- barchar1-->
@@ -214,148 +245,197 @@
 
             <!-- Calendar -->
             
+
+
             <!-- /.card -->
           </section>
           <!-- right col -->
+           
+             <section class="col-lg-7 connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                 
+                     <i class="fas fa-th mr-1"></i>
+                  (الاكثر مبيعا (كميه
+                </h3>
+               
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                  <!-- barchar1-->
+                <div class="tab-content p-0">
+               </div>
+                <!--firstgrid-->
+
+                 <dx:ASPxGridView Width="100%" DataSourceID="SalesDS3" ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" Theme="iOS">
+    <Columns>
+
+        <dx:GridViewDataTextColumn FieldName="itmcode" VisibleIndex="3" Caption="كود الصنف ">
+         <%--   <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+        </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="itmname" VisibleIndex="1" Caption=" اسم الصنف">
+          <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+        </dx:GridViewDataTextColumn>
+           <dx:GridViewDataTextColumn FieldName="qty" VisibleIndex="0" Caption="الكميه ">
+          <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+        </dx:GridViewDataTextColumn>
+       
+    </Columns>
+</dx:ASPxGridView>
+                     <asp:SqlDataSource runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:EasyERP %>" OldValuesParameterFormatString="original_{0}" SelectCommand="Dashboard_ItmMaxQty" SelectCommandType="StoredProcedure" ID="SalesDS3" __designer:wfdid="w7">
+              
+               
+            </asp:SqlDataSource>
+
+                  </div>
+                </div>
+                 </section>
+
+           
+
+            
+
+              <section class="col-lg-5 connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                 
+                     <i class="fas fa-th mr-1"></i>
+                  (الاكثر مبيعا (قيمه
+                </h3>
+               
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                  <!-- barchar1-->
+                <div class="tab-content p-0">
+               </div>
+                <!-- second grid-->
+
+                    <dx:ASPxGridView Width="100%" DataSourceID="SalesDS4" ID="ASPxGridView2" runat="server" AutoGenerateColumns="False" Theme="iOS">
+    <Columns>
+
+        <dx:GridViewDataTextColumn FieldName="itmcode" VisibleIndex="3" Caption="كود الصنف ">
+         <%--   <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+        </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="itmname" VisibleIndex="1" Caption=" اسم الصنف">
+          <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+        </dx:GridViewDataTextColumn>
+           <dx:GridViewDataTextColumn FieldName="netvalue" VisibleIndex="0" Caption="القيمه ">
+          <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+        </dx:GridViewDataTextColumn>
+       
+    </Columns>
+</dx:ASPxGridView>
+                     <asp:SqlDataSource runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:EasyERP %>" OldValuesParameterFormatString="original_{0}" SelectCommand="Dashboard_ItmMaxVal" SelectCommandType="StoredProcedure" ID="SalesDS4" __designer:wfdid="w7">
+              
+               
+            </asp:SqlDataSource>
+
+
+
+
+
+                  </div>
+                </div>
+                 </section>
+
+                  <section class="col-lg-7 connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                 
+                     <i class="fas fa-th mr-1"></i>
+                  (الاقل غير مباعه  (كميه
+                </h3>
+               
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                  <!-- barchar1-->
+                <div class="tab-content p-0">
+               </div>
+                 <!-- third grid-->
+                  
+                    <dx:ASPxGridView Width="100%" DataSourceID="SalesDS5" ID="ASPxGridView3" runat="server" AutoGenerateColumns="False" Theme="iOS">
+    <Columns>
+
+        <dx:GridViewDataTextColumn FieldName="itmcode" VisibleIndex="3" Caption="كود الصنف ">
+         <%--   <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+        </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="itmname" VisibleIndex="1" Caption=" اسم الصنف">
+          <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+        </dx:GridViewDataTextColumn>
+           <dx:GridViewDataTextColumn FieldName="nowqty" VisibleIndex="0" Caption="الكميه ">
+          <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+        </dx:GridViewDataTextColumn>
+       
+    </Columns>
+</dx:ASPxGridView>
+                     <asp:SqlDataSource runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:EasyERP %>" OldValuesParameterFormatString="original_{0}" SelectCommand="Dashboard_ItmNoSls" SelectCommandType="StoredProcedure" ID="SalesDS5" __designer:wfdid="w7">
+              
+               
+            </asp:SqlDataSource>
+
+
+
+
+                  </div>
+                </div>
+                 </section>
+
+                  <section class="col-lg-5 connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                 
+                     <i class="fas fa-th mr-1"></i>
+                  (الاقل المبيعات  (قيمه
+                </h3>
+               
+              </div><!-- /.card-header -->
+              <div class="card-body">
+                  <!-- barchar1-->
+                <div class="tab-content p-0">
+               </div>
+                 <!--fourthgrid-->
+
+                     <dx:ASPxGridView Width="100%" DataSourceID="SalesDS6" ID="ASPxGridView4" runat="server" AutoGenerateColumns="False" Theme="iOS">
+    <Columns>
+
+        <dx:GridViewDataTextColumn FieldName="itmcode" VisibleIndex="3" Caption="كود الصنف ">
+         <%--   <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+        </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="itmname" VisibleIndex="1" Caption=" اسم الصنف">
+          <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+        </dx:GridViewDataTextColumn>
+           <dx:GridViewDataTextColumn FieldName="qty" VisibleIndex="0" Caption="القيمه ">
+          <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+        </dx:GridViewDataTextColumn>
+       
+    </Columns>
+</dx:ASPxGridView>
+                     <asp:SqlDataSource runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:EasyERP %>" OldValuesParameterFormatString="original_{0}" SelectCommand="Dashboard_ItmMinQty" SelectCommandType="StoredProcedure" ID="SalesDS6" __designer:wfdid="w7">
+              
+               
+            </asp:SqlDataSource>
+
+
+
+                  </div>
+                </div>
+                 </section>
+
         </div>
         <!-- /.row (main row) -->
 
-<div class="card">
-              <div class="card-header">
-                <h3 class="card-title">
-                  <i class="ion ion-clipboard mr-1"></i>
-              اسم المستخدم
-                </h3>
 
-               
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-          <table id="dt-bordered3" class="table table-bordered" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th></th>
-      <th class="th-sm">Position
-      </th>
-      <th class="th-sm">Office
-      </th>
-      <th class="th-sm">Age
-      </th>
-      <th class="th-sm">Start date
-      </th>
-      <th class="th-sm">Salary
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td></td>
-      <td>System Architect</td>
-      <td>Edinburgh</td>
-      <td>61</td>
-      <td>2011/04/25</td>
-      <td>$320,800</td>
-    </tr>
 
-  </tbody>
-  
-</table>
-                
-              </div>
-            
-              
-            </div>
 
-<div class="card">
-              <div class="card-header">
-                <h3 class="card-title">
-                  <i class="ion ion-clipboard mr-1"></i>
-             قائمه المستخدم
-                </h3>
 
-               
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-          <table id="dt-bordered3" class="table table-bordered" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th></th>
-      <th class="th-sm">Position
-      </th>
-      <th class="th-sm">Office
-      </th>
-      <th class="th-sm">Age
-      </th>
-      <th class="th-sm">Start date
-      </th>
-      <th class="th-sm">Salary
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td></td>
-      <td>System Architect</td>
-      <td>Edinburgh</td>
-      <td>61</td>
-      <td>2011/04/25</td>
-      <td>$320,800</td>
-    </tr>
-
-  </tbody>
-  
-</table>
-                
-              </div>
-            
-              
-            </div>
-          <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">
-                  <i class="ion ion-clipboard mr-1"></i>
-           الحركات الغير مرحله
-                </h3>
-
-               
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-          <table id="dt-bordered3" class="table table-bordered" cellspacing="0" width="100%">
-  <thead>
-    <tr>
-      <th></th>
-      <th class="th-sm">Position
-      </th>
-      <th class="th-sm">Office
-      </th>
-      <th class="th-sm">Age
-      </th>
-      <th class="th-sm">Start date
-      </th>
-      <th class="th-sm">Salary
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td></td>
-      <td>System Architect</td>
-      <td>Edinburgh</td>
-      <td>61</td>
-      <td>2011/04/25</td>
-      <td>$320,800</td>
-    </tr>
-
-  </tbody>
-  
-</table>
-                
-              </div>
-            
-              
-            </div>
+          
       </div><!-- /.container-fluid -->
 
 
@@ -589,6 +669,40 @@
             });
 
         </script>
+      <script type="text/javascript">
+
+
+          function Popupinfo(t) {
+
+              var y;
+              try { y = '<%=Session["LoginTime"]%>' }
+              catch (NullReferenceException) { y = "NULL"; }
+
+            
+              
+              var year = y;
+              var type = t;
+
+              var rc = window.open('../Popupinfo.aspx?Type=' + t + '&Year=' + year + '', '', 'width=800,height=600,scrollbars=yes');
+
+          }
+          function updatefields(x, y, z, w, s) {
+
+            <%--  document.getElementById('<%= hf_itmid.ClientID %>').value =z;
+         
+         __doPostBack('<%= UpdatePanel1.ClientID%>', '<%=hf_itmid.ClientID%>');--%>
+
+
+
+
+          }
+
+
+
+
+
+      </script>
+   
          </form>
     </html>
     
