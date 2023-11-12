@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Data.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v20.2.Core, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -53,10 +57,39 @@
     <Reference Include="DevExpress.Web.Resources.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v20.2, Version=20.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="IKVM.OpenJDK.Core, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=8.1.5717.0, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\IKVM.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="saxon-he-10.8, Version=10.8.0.0, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\saxon-he-10.8.dll</HintPath>
+    </Reference>
+    <Reference Include="saxon-he-api-10.8, Version=10.8.0.0, Culture=neutral, PublicKeyToken=e1fdd002d5083fe6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\saxon-he-api-10.8.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -905,6 +938,7 @@
     <Content Include="build\npm\Plugins.js" />
     <Content Include="build\npm\Publish.js" />
     <Content Include="build\npm\vnu-jar.js" />
+    <Content Include="cert\secret.txt" />
     <Content Include="Dash_form.aspx" />
     <Content Include="dist\css\adminlte.css" />
     <Content Include="dist\css\adminlte.min.css" />
@@ -1350,6 +1384,16 @@
     <Content Include="Images\word2.jpg" />
     <Content Include="Images\workprogress.jpg" />
     <Content Include="Images\write.jpg" />
+    <Content Include="Invoices\Normal\Simplified\Invoices\310901645200003_20170328T143926_3.xml" />
+    <Content Include="Invoices\Normal\Simplified\Invoices\310901645200003_20170422T_2.xml" />
+    <Content Include="Invoices\Normal\Simplified\Invoices\310901645200003_20171119T143926_9.xml" />
+    <Content Include="Invoices\Normal\Simplified\Invoices\310901645200003_20171219T143926_27.xml" />
+    <Content Include="Invoices\Normal\Simplified\Invoices\310901645200003_20200105T_63.xml" />
+    <Content Include="Invoices\Signed\Simplified\Invoices\310901645200003_20170328T143926_3.xml" />
+    <Content Include="Invoices\Signed\Simplified\Invoices\310901645200003_20170422T_2.xml" />
+    <Content Include="Invoices\Signed\Simplified\Invoices\310901645200003_20171119T143926_9.xml" />
+    <Content Include="Invoices\Signed\Simplified\Invoices\310901645200003_20171219T143926_27.xml" />
+    <Content Include="Invoices\Signed\Simplified\Invoices\310901645200003_20200105T_63.xml" />
     <Content Include="InvRtn_Form.aspx" />
     <Content Include="Inv_Form.aspx" />
     <Content Include="pages\calendar.html" />
@@ -3601,6 +3645,10 @@
     <Content Include="plugins\summernote\summernote.min.js.map" />
     <Content Include="plugins\toastr\toastr.js.map" />
     <Content Include="Site1.Master" />
+    <Content Include="cert\cert - Copy.cer" />
+    <Content Include="cert\cert.pem" />
+    <Content Include="cert\csr.csr" />
+    <Content Include="cert\key.pem" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -3611,6 +3659,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Invoices\Normal\Simplified\Credit\" />
+    <Folder Include="Invoices\Normal\Simplified\Debit\" />
+    <Folder Include="Invoices\Normal\Standard\Credit\" />
+    <Folder Include="Invoices\Normal\Standard\Debit\" />
+    <Folder Include="Invoices\Normal\Standard\Invoices\" />
+    <Folder Include="Invoices\Signed\Simplified\Credit\" />
+    <Folder Include="Invoices\Signed\Simplified\Debit\" />
+    <Folder Include="Invoices\Signed\Standard\Credit\" />
+    <Folder Include="Invoices\Signed\Standard\Debit\" />
+    <Folder Include="Invoices\Signed\Standard\Invoices\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
