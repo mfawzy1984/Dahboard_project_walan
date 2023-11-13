@@ -348,7 +348,7 @@
                 <h3 class="card-title">
                  
                      <i class="fas fa-th mr-1"></i>
-                  (الاقل غير مباعه  (كميه
+                  (الاصناف غير مباعه  (كميه
                 </h3>
                
               </div><!-- /.card-header -->
@@ -367,7 +367,7 @@
             <dx:GridViewDataTextColumn FieldName="itmname" VisibleIndex="1" Caption=" اسم الصنف">
           <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
         </dx:GridViewDataTextColumn>
-           <dx:GridViewDataTextColumn FieldName="nowqty" VisibleIndex="0" Caption="الكميه ">
+           <dx:GridViewDataTextColumn FieldName="nowqty" VisibleIndex="0" Caption="رصيد ">
           <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
         </dx:GridViewDataTextColumn>
        
@@ -392,7 +392,7 @@
                 <h3 class="card-title">
                  
                      <i class="fas fa-th mr-1"></i>
-                  (الاقل المبيعات  (قيمه
+                  (الاقل مبيعا  (كميه
                 </h3>
                
               </div><!-- /.card-header -->
@@ -411,7 +411,7 @@
             <dx:GridViewDataTextColumn FieldName="itmname" VisibleIndex="1" Caption=" اسم الصنف">
           <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
         </dx:GridViewDataTextColumn>
-           <dx:GridViewDataTextColumn FieldName="qty" VisibleIndex="0" Caption="القيمه ">
+           <dx:GridViewDataTextColumn FieldName="qty" VisibleIndex="0" Caption="الكميه ">
           <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
         </dx:GridViewDataTextColumn>
        
