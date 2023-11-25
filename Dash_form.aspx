@@ -7,25 +7,17 @@
  
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">  
      
- <!DOCTYPE html>
+    <!DOCTYPE html>
 
 <html>
 <head>
   <title>EasyERP | Dashboard</title>
       <link  rel="icon" href="Images/icons/logo.ico" type="image/x-icon" />
-    <style>
+ 
 
 
-/*        #ASPxGridView1 .columnHeaderStyle {
-    background-color: yellow;
-    color: steelblue;
-    border:hidden;
-}*/
 
-
-    </style>
 </head>
-
 
 
 
@@ -34,18 +26,29 @@
 
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" runat="server">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
+          <div class="col-sm-4">
                
               <h5 class="m-0">  السنه الماليه</h5>
               <dx:BootstrapComboBox ClientInstanceName="CmbYear"  id="CmbYear" runat="server" textfield="years" valuefield="years" datasourceid="SqlYear" selectedindex="0" valuetype="System.String" ontextchanged="CmbYear_TextChanged" autopostback="true" ></dx:BootstrapComboBox>
               </div>
+             <div class="col-sm-4">
+               
+              <h5 class="m-0" > الفروع</h5>
+              <dx:BootstrapComboBox ClientInstanceName="Cmbbranch"  id="Cmbbranch" runat="server" textfield="branchname" valuefield="branchid" datasourceid="Sqlbranches" selectedindex="0" valuetype="System.String" ontextchanged="Cmbbranch_TextChanged" autopostback="true" ></dx:BootstrapComboBox>
+              </div>
        
         </div>
+
+           <div class="row mb-2">
+         
+       
+        </div>
+
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
@@ -268,7 +271,7 @@
                </div>
                 <!--firstgrid-->
 
-                 <dx:ASPxGridView Width="100%" DataSourceID="SalesDS3" ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" Theme="iOS">
+                 <dx:ASPxGridView Width="100%"  ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" Theme="iOS">
     <Columns>
 
         <dx:GridViewDataTextColumn FieldName="itmcode" VisibleIndex="3" Caption="كود الصنف ">
@@ -283,10 +286,7 @@
        
     </Columns>
 </dx:ASPxGridView>
-                     <asp:SqlDataSource runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:EasyERP %>" OldValuesParameterFormatString="original_{0}" SelectCommand="Dashboard_ItmMaxQty" SelectCommandType="StoredProcedure" ID="SalesDS3" __designer:wfdid="w7">
-              
-               
-            </asp:SqlDataSource>
+                  
 
                   </div>
                 </div>
@@ -313,25 +313,22 @@
                </div>
                 <!-- second grid-->
 
-                    <dx:ASPxGridView Width="100%" DataSourceID="SalesDS4" ID="ASPxGridView2" runat="server" AutoGenerateColumns="False" Theme="iOS">
+                    <dx:ASPxGridView Width="100%"  ID="ASPxGridView2" runat="server" AutoGenerateColumns="False" Theme="iOS">
     <Columns>
 
         <dx:GridViewDataTextColumn FieldName="itmcode" VisibleIndex="3" Caption="كود الصنف ">
-         <%--   <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+            <%--<HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
         </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn FieldName="itmname" VisibleIndex="1" Caption=" اسم الصنف">
-          <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+            <%--<HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
         </dx:GridViewDataTextColumn>
            <dx:GridViewDataTextColumn FieldName="netvalue" VisibleIndex="0" Caption="القيمه ">
-          <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+            <%--<HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
         </dx:GridViewDataTextColumn>
        
     </Columns>
 </dx:ASPxGridView>
-                     <asp:SqlDataSource runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:EasyERP %>" OldValuesParameterFormatString="original_{0}" SelectCommand="Dashboard_ItmMaxVal" SelectCommandType="StoredProcedure" ID="SalesDS4" __designer:wfdid="w7">
-              
-               
-            </asp:SqlDataSource>
+            
 
 
 
@@ -358,25 +355,22 @@
                </div>
                  <!-- third grid-->
                   
-                    <dx:ASPxGridView Width="100%" DataSourceID="SalesDS5" ID="ASPxGridView3" runat="server" AutoGenerateColumns="False" Theme="iOS">
+                    <dx:ASPxGridView Width="100%"  ID="ASPxGridView3" runat="server" AutoGenerateColumns="False" Theme="iOS">
     <Columns>
 
         <dx:GridViewDataTextColumn FieldName="itmcode" VisibleIndex="3" Caption="كود الصنف ">
-         <%--   <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+            <%--<HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
         </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn FieldName="itmname" VisibleIndex="1" Caption=" اسم الصنف">
-          <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+            <%--<HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
         </dx:GridViewDataTextColumn>
            <dx:GridViewDataTextColumn FieldName="nowqty" VisibleIndex="0" Caption="رصيد ">
-          <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+            <%--<HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
         </dx:GridViewDataTextColumn>
        
     </Columns>
 </dx:ASPxGridView>
-                     <asp:SqlDataSource runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:EasyERP %>" OldValuesParameterFormatString="original_{0}" SelectCommand="Dashboard_ItmNoSls" SelectCommandType="StoredProcedure" ID="SalesDS5" __designer:wfdid="w7">
-              
                
-            </asp:SqlDataSource>
 
 
 
@@ -402,27 +396,24 @@
                </div>
                  <!--fourthgrid-->
 
-                     <dx:ASPxGridView Width="100%" DataSourceID="SalesDS6" ID="ASPxGridView4" runat="server" AutoGenerateColumns="False" Theme="iOS">
+                     <dx:ASPxGridView Width="100%"  ID="ASPxGridView4" runat="server" AutoGenerateColumns="False" Theme="iOS">
     <Columns>
 
         <dx:GridViewDataTextColumn FieldName="itmcode" VisibleIndex="3" Caption="كود الصنف ">
-         <%--   <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+            <%--<HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
         </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn FieldName="itmname" VisibleIndex="1" Caption=" اسم الصنف">
-          <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+            <%--<HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
         </dx:GridViewDataTextColumn>
            <dx:GridViewDataTextColumn FieldName="qty" VisibleIndex="0" Caption="الكميه ">
-          <%--  <HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
+            <%--<HeaderStyle BackColor="Yellow" ForeColor="SteelBlue" />--%>
         </dx:GridViewDataTextColumn>
        
     </Columns>
 </dx:ASPxGridView>
-                     <asp:SqlDataSource runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:EasyERP %>" OldValuesParameterFormatString="original_{0}" SelectCommand="Dashboard_ItmMinQty" SelectCommandType="StoredProcedure" ID="SalesDS6" __designer:wfdid="w7">
               
-               
-            </asp:SqlDataSource>
 
-
+                  
 
                   </div>
                 </div>
@@ -458,6 +449,10 @@
         <asp:Literal runat="server" ID="ltchartdata3"></asp:Literal>
          <asp:SqlDataSource id="SqlYear" runat="server"   SelectCommand="select distinct  year(vchrdate) as years&#13;&#10; from gl_vouchers&#13;&#10;order by  year(vchrdate)  desc" ConnectionString="<%$ ConnectionStrings:EasyERP %>">
     </asp:SqlDataSource>
+       
+ <asp:SqlDataSource runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:EasyERP %>" OldValuesParameterFormatString="original_{0}" SelectCommand="Dashboard_Branches" SelectCommandType="StoredProcedure" ID="Sqlbranches" __designer:wfdid="w7">  
+            </asp:SqlDataSource>
+
 <!-- jQuery -->
 <script src="../plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -493,36 +488,80 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../dist/js/pages/dashboard.js"></script>
        
+    
+  
 
- <script>
-     var chartlabels1;
-     var chartdata1;
+      <script type="text/javascript">
 
-     var ctx = document.getElementById("myChart").getContext('2d');
-     var myChart = new Chart(ctx, {
-         type: 'bar',
-         data: {
-             labels: chartlabels1,
-             datasets: [{
-                 label: ' المشتريات  الشهريه ',
-                 data: chartdata1,
-                 backgroundColor: ["#0074D9", "#FF4136", "#2ECC40", "#0074D9", "#FF4136", "#2ECC40", "#0074D9", "#FF4136", "#2ECC40", "#0074D9", "#FF4136", "#2ECC40"],
-                 borderWidth: 1
-             }]
-         },
-         options: {
-             scales: {
-                 yAxes: [{
-                     ticks: {
-                         beginAtZero: true
+
+          function Popupinfo(t) {
+
+              var y;
+              try { y = '<%=Session["LoginTime"]%>' }
+              catch (NullReferenceException) { y = "NULL"; }
+
+            
+              
+              var year = y;
+              var type = t;
+
+              var rc = window.open('../Popupinfo.aspx?Type=' + t + '&Year=' + year + '', '', 'width=800,height=600,scrollbars=yes');
+
+          }
+          function updatefields(x, y, z, w, s) {
+
+            <%--  document.getElementById('<%= hf_itmid.ClientID %>').value =z;
+         
+         __doPostBack('<%= UpdatePanel1.ClientID%>', '<%=hf_itmid.ClientID%>');--%>
+
+
+
+
+          }
+
+
+
+
+
+      </script>
+   
+      
+   
+    </html>
+    
+     <script type="text/javascript">
+
+        
+
+
+             var chartlabels1;
+             var chartdata1;
+
+             var ctx = document.getElementById("myChart").getContext('2d');
+             var myChart = new Chart(ctx, {
+                 type: 'bar',
+                 data: {
+                     labels: chartlabels1,
+                     datasets: [{
+                         label: ' المشتريات  الشهريه ',
+                         data: chartdata1,
+                         backgroundColor: ["#0074D9", "#FF4136", "#2ECC40", "#0074D9", "#FF4136", "#2ECC40", "#0074D9", "#FF4136", "#2ECC40", "#0074D9", "#FF4136", "#2ECC40"],
+                         borderWidth: 1
+                     }]
+                 },
+                 options: {
+                     scales: {
+                         yAxes: [{
+                             ticks: {
+                                 beginAtZero: true
+                             }
+                         }]
                      }
-                 }]
-             }
-         }
-     });
+                 }
+             });
+         
 
-
-    </script>
+     </script>
 
     <script>
         var chartlabels2;
@@ -585,7 +624,7 @@
                 responsive: true,
                 title: {
                     display: true,
-                   
+
                 }
             }
         });
@@ -611,7 +650,7 @@
                    responsive: true,
                    title: {
                        display: true,
-                      
+
                    }
                }
            });
@@ -669,41 +708,8 @@
             });
 
         </script>
-      <script type="text/javascript">
 
-
-          function Popupinfo(t) {
-
-              var y;
-              try { y = '<%=Session["LoginTime"]%>' }
-              catch (NullReferenceException) { y = "NULL"; }
-
-            
-              
-              var year = y;
-              var type = t;
-
-              var rc = window.open('../Popupinfo.aspx?Type=' + t + '&Year=' + year + '', '', 'width=800,height=600,scrollbars=yes');
-
-          }
-          function updatefields(x, y, z, w, s) {
-
-            <%--  document.getElementById('<%= hf_itmid.ClientID %>').value =z;
-         
-         __doPostBack('<%= UpdatePanel1.ClientID%>', '<%=hf_itmid.ClientID%>');--%>
-
-
-
-
-          }
-
-
-
-
-
-      </script>
-   
-         </form>
-    </html>
     
+
+           </form>
 </asp:Content>

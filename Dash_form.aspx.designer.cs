@@ -24,6 +24,15 @@ namespace Dahboard_project
         protected global::DevExpress.Web.Bootstrap.BootstrapComboBox CmbYear;
 
         /// <summary>
+        /// Cmbbranch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.Bootstrap.BootstrapComboBox Cmbbranch;
+
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -105,15 +114,6 @@ namespace Dahboard_project
         protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
 
         /// <summary>
-        /// SalesDS3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SalesDS3;
-
-        /// <summary>
         /// ASPxGridView2 control.
         /// </summary>
         /// <remarks>
@@ -121,15 +121,6 @@ namespace Dahboard_project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGridView ASPxGridView2;
-
-        /// <summary>
-        /// SalesDS4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SalesDS4;
 
         /// <summary>
         /// ASPxGridView3 control.
@@ -141,15 +132,6 @@ namespace Dahboard_project
         protected global::DevExpress.Web.ASPxGridView ASPxGridView3;
 
         /// <summary>
-        /// SalesDS5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SalesDS5;
-
-        /// <summary>
         /// ASPxGridView4 control.
         /// </summary>
         /// <remarks>
@@ -157,15 +139,6 @@ namespace Dahboard_project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGridView ASPxGridView4;
-
-        /// <summary>
-        /// SalesDS6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SalesDS6;
 
         /// <summary>
         /// ltchartdata control.
@@ -202,5 +175,14 @@ namespace Dahboard_project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlYear;
+
+        /// <summary>
+        /// Sqlbranches control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource Sqlbranches;
     }
 }
