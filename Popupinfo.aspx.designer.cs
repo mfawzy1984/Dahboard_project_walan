@@ -69,6 +69,15 @@ namespace Dahboard_project
         protected global::System.Web.UI.WebControls.HiddenField ObjectID2;
 
         /// <summary>
+        /// ObjectID3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField ObjectID3;
+
+        /// <summary>
         /// ASPxGridViewExporter1 control.
         /// </summary>
         /// <remarks>

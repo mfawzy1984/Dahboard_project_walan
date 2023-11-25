@@ -38,30 +38,7 @@ namespace Dahboard_project
                 selectedItemValue = CmbYear.Value.ToString();
                 Session["LoginTime"] = selectedItemValue;
             }
-          
-
-
-
-            // for cards
-            Totalsales_card_func(DateTime.Now.Year.ToString());
-            Rtrnsales_card_func(DateTime.Now.Year.ToString());
-            totalburchases_card_func(DateTime.Now.Year.ToString());
-            rtnburchases_card_func(DateTime.Now.Year.ToString());
-
-
-            // sales barchart
-            sales_BARCHART_func(DateTime.Now.Year.ToString());
-
-
-            //  burchases bar chart 
-
-            burchases_BARCHART_func(DateTime.Now.Year.ToString());
-
-            //  pie chart for sales branches
-            salesbranch_piechart_func();
-
             string selectedItemValue2 = null;
-
             if (Cmbbranch.SelectedIndex >= 0)
             {
                 Cmbbranch.DataBind();
@@ -73,19 +50,42 @@ namespace Dahboard_project
                 get_ItmMinQty(selectedItemValue2);
             }
 
+
+            // for cards
+            Totalsales_card_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
+            Rtrnsales_card_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
+            totalburchases_card_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
+            rtnburchases_card_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
+
+
+            // sales barchart
+            sales_BARCHART_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
+
+
+            //  burchases bar chart 
+
+            burchases_BARCHART_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
+
+            //  pie chart for sales branches
+            salesbranch_piechart_func();
+
+      
+
+           
+
         }
 
         protected void CmbYear_TextChanged(object sender, EventArgs e)
         {
             // for cards
-            Totalsales_card_func(CmbYear.Value.ToString());
-            Rtrnsales_card_func(CmbYear.Value.ToString());
-            totalburchases_card_func(CmbYear.Value.ToString());
-            rtnburchases_card_func(CmbYear.Value.ToString());
+            Totalsales_card_func(CmbYear.Value.ToString(),Cmbbranch.Value.ToString());
+            Rtrnsales_card_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
+            totalburchases_card_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
+            rtnburchases_card_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
             //for sales_barchart
-            sales_BARCHART_func(CmbYear.Value.ToString());
+            sales_BARCHART_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
             //for burchases_barchart
-            burchases_BARCHART_func(CmbYear.Value.ToString());
+            burchases_BARCHART_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
             // pie chart for sales branches
             salesbranch_piechart_func();
 
@@ -100,17 +100,24 @@ namespace Dahboard_project
             get_ItmNoSls(Cmbbranch.Value.ToString());
             get_ItmMinQty(Cmbbranch.Value.ToString());
 
-            
+            Totalsales_card_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
+            Rtrnsales_card_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
+            totalburchases_card_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
+            rtnburchases_card_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
+
+            sales_BARCHART_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
+            burchases_BARCHART_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
 
 
         }
 
         //function of total sales_card
-        public void Totalsales_card_func(string year)
+        public void Totalsales_card_func(string year,String branch)
         {
           
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@year", year);
+            cmd.Parameters.AddWithValue("@branchid", branch);
 
             cmd.CommandText = "Dashboard_Cards_salesinv";
 
@@ -126,10 +133,11 @@ namespace Dahboard_project
         }
 
         //function of rtrn sales_card
-        public void Rtrnsales_card_func(string year)
+        public void Rtrnsales_card_func(string year,string branch)
         {
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@year", year);
+            cmd.Parameters.AddWithValue("@branchid", branch);
 
             cmd.CommandText = "Dashboard_Cards_salesRtninv";
 
@@ -144,10 +152,11 @@ namespace Dahboard_project
         }
 
         //function of total burchases_card
-        public void totalburchases_card_func(string year)
+        public void totalburchases_card_func(string year,string branch)
         {
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@year", year);
+            cmd.Parameters.AddWithValue("@branchid", branch);
 
             cmd.CommandText = "Dashboard_Cards_total_Burshases";
 
@@ -162,10 +171,11 @@ namespace Dahboard_project
         }
 
         //function of rtn burchases_card
-        public void rtnburchases_card_func(string year)
+        public void rtnburchases_card_func(string year,string branch)
         {
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@year", year);
+            cmd.Parameters.AddWithValue("@branchid", branch);
 
             cmd.CommandText = "Dashboard_Cards_Total_RtnBurshases";
 
@@ -181,10 +191,11 @@ namespace Dahboard_project
 
 
         //function of sales_barchart
-        public void sales_BARCHART_func(string year)
+        public void sales_BARCHART_func(string year,string branch)
         {
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@year", year);
+            cmd.Parameters.AddWithValue("@branchid", branch);
             cmd.CommandText = "Dashboard_sales_BARCHART";
 
             string chartdata2 = "";
@@ -201,19 +212,29 @@ namespace Dahboard_project
 
 
             }
-            views = views.Substring(0, views.Length - 1);
-            labels = labels.Substring(0, labels.Length - 1);
+            try
+            {
+                views = views.Substring(0, views.Length - 1);
+                labels = labels.Substring(0, labels.Length - 1);
 
-            chartdata2 += "chartlabels2=[" + labels + "];chartdata2=[" + views + "]";
-            chartdata2 += "</script>";
-            ltchartdata2.Text = chartdata2;
-            dr2.Close();
+                chartdata2 += "chartlabels2=[" + labels + "];chartdata2=[" + views + "]";
+                chartdata2 += "</script>";
+                ltchartdata2.Text = chartdata2;
+                dr2.Close();
+            }
+
+            catch (Exception ex)
+            {
+               // ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('المبيعات الشهريه لا يوجد بها بيانات')", true);
+                dr2.Close();
+            }
         }
         //function for burchase_barchart
-        public void burchases_BARCHART_func(string year)
+        public void burchases_BARCHART_func(string year,string branch)
         {
             cmd.Parameters.Clear();
             cmd.Parameters.AddWithValue("@year", year);
+            cmd.Parameters.AddWithValue("@branchid", branch);
             cmd.CommandText = "Dashboard_purchase_BARCHART";
 
             string chartdata1 = "";
@@ -230,14 +251,22 @@ namespace Dahboard_project
 
 
             }
-            views2 = views2.Substring(0, views2.Length - 1);
-            labels2 = labels2.Substring(0, labels2.Length - 1);
+            try
+            {
+                views2 = views2.Substring(0, views2.Length - 1);
+                labels2 = labels2.Substring(0, labels2.Length - 1);
 
-            chartdata1 += "chartlabels1=[" + labels2 + "];chartdata1=[" + views2 + "]";
-            chartdata1 += "</script>";
-            ltchartdata.Text = chartdata1;
+                chartdata1 += "chartlabels1=[" + labels2 + "];chartdata1=[" + views2 + "]";
+                chartdata1 += "</script>";
+                ltchartdata.Text = chartdata1;
 
-            dr3.Close();
+                dr3.Close();
+            }
+            catch(Exception ex)
+            {
+               // ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('المشتريات الشهريه لا يوجد بها بيانات')", true);
+                dr3.Close();
+            }
 
         }
         //function for  pie chart  sales branches

@@ -14,11 +14,12 @@ namespace Dahboard_project
         {
             string sessionyear = Request.QueryString["Year"];
             String sessiontype =  Request.QueryString["Type"];
+            String sessionbranch =  Request.QueryString["Branchid"];
             ObjectID.Value = sessionyear;
             ObjectID2.Value = sessiontype;
+            ObjectID3.Value = sessionbranch;
             gvunPost.DataBind();
-            //SalesDS2.SelectParameters.Add("year", sessionyear);
-            //SalesDS2.SelectParameters.Add("type", sessiontype);
+            
 
             if (IsPostBack)
             {

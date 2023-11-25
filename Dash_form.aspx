@@ -497,22 +497,29 @@
           function Popupinfo(t) {
 
               var y;
-              try { y = '<%=Session["LoginTime"]%>' }
-              catch (NullReferenceException) { y = "NULL"; }
+              var m;
+              try {
+                  y = '<%=Session["LoginTime"]%>'
+                 
+                  m = '<%=Session["loginbranch"]%>'
+                 
+              }
+              catch (NullReferenceException) {
+                  y = "NULL";
+                  m = "NULL";
+              }
 
             
               
               var year = y;
               var type = t;
+              var Branchid = m;
 
-              var rc = window.open('../Popupinfo.aspx?Type=' + t + '&Year=' + year + '', '', 'width=800,height=600,scrollbars=yes');
+              var rc = window.open('../Popupinfo.aspx?Type=' + t + '&Year=' + year + '&Branchid=' + Branchid + '', '', 'width=800,height=600,scrollbars=yes');
 
           }
           function updatefields(x, y, z, w, s) {
 
-            <%--  document.getElementById('<%= hf_itmid.ClientID %>').value =z;
-         
-         __doPostBack('<%= UpdatePanel1.ClientID%>', '<%=hf_itmid.ClientID%>');--%>
 
 
 

@@ -328,11 +328,13 @@
                  <SelectParameters> 
                 <asp:ControlParameter ControlID="ObjectID" Name="year" PropertyName="Value" Type="String" />
                      <asp:ControlParameter ControlID="ObjectID2" Name="type" PropertyName="Value" Type="String" />
+                     <asp:ControlParameter ControlID="ObjectID3" Name="branchid" PropertyName="Value" Type="int16" />
 </SelectParameters>
               
             </asp:SqlDataSource>
                    <asp:HiddenField ID="ObjectID" runat="server" />
         <asp:HiddenField ID="ObjectID2" runat="server" />
+            <asp:HiddenField ID="ObjectID3" runat="server" />
         <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" FileName="Data" GridViewID="gvunPost">
         </dx:ASPxGridViewExporter>
      
