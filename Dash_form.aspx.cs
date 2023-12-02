@@ -44,10 +44,10 @@ namespace Dahboard_project
                 Cmbbranch.DataBind();
                 selectedItemValue2 = Cmbbranch.Value.ToString();
                 Session["loginbranch"] = selectedItemValue2;
-                get_ItmMaxQty(selectedItemValue2);
-                get_ItmMaxVal(selectedItemValue2);
-                get_ItmNoSls(selectedItemValue2);
-                get_ItmMinQty(selectedItemValue2);
+                get_ItmMaxQty(selectedItemValue2, selectedItemValue);
+                get_ItmMaxVal(selectedItemValue2, selectedItemValue);
+                get_ItmNoSls(selectedItemValue2, selectedItemValue);
+                get_ItmMinQty(selectedItemValue2, selectedItemValue);
             }
 
 
@@ -89,16 +89,20 @@ namespace Dahboard_project
             // pie chart for sales branches
             salesbranch_piechart_func();
 
+            get_ItmMaxQty(Cmbbranch.Value.ToString(), CmbYear.Value.ToString());
+            get_ItmMaxVal(Cmbbranch.Value.ToString(), CmbYear.Value.ToString());
+            get_ItmNoSls(Cmbbranch.Value.ToString(), CmbYear.Value.ToString());
+            get_ItmMinQty(Cmbbranch.Value.ToString(), CmbYear.Value.ToString());
 
         }
 
         protected void Cmbbranch_TextChanged(object sender, EventArgs e)
         {
 
-            get_ItmMaxQty(Cmbbranch.Value.ToString());
-            get_ItmMaxVal(Cmbbranch.Value.ToString());
-            get_ItmNoSls(Cmbbranch.Value.ToString());
-            get_ItmMinQty(Cmbbranch.Value.ToString());
+            get_ItmMaxQty(Cmbbranch.Value.ToString(), CmbYear.Value.ToString());
+            get_ItmMaxVal(Cmbbranch.Value.ToString(), CmbYear.Value.ToString());
+            get_ItmNoSls(Cmbbranch.Value.ToString(), CmbYear.Value.ToString());
+            get_ItmMinQty(Cmbbranch.Value.ToString(), CmbYear.Value.ToString());
 
             Totalsales_card_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
             Rtrnsales_card_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
@@ -306,10 +310,11 @@ namespace Dahboard_project
         //function for firstgrid get_ItmMaxQty
 
 
-        public void get_ItmMaxQty(string branchid)
+        public void get_ItmMaxQty(string branchid,string year)
         {
             cmd3.Parameters.Clear();
             cmd3.Parameters.AddWithValue("@branchid", branchid);
+            cmd3.Parameters.AddWithValue("@year", year);
             cmd3.CommandText = "Dashboard_ItmMaxQty";
 
             DataTable dt = new DataTable();
@@ -320,10 +325,11 @@ namespace Dahboard_project
          
         }
         //function for secondgrid get_ItmMaxVal
-        public void get_ItmMaxVal(string branchid)
+        public void get_ItmMaxVal(string branchid,string year)
         {
             cmd3.Parameters.Clear();
             cmd3.Parameters.AddWithValue("@branchid", branchid);
+            cmd3.Parameters.AddWithValue("@year", year);
             cmd3.CommandText = "Dashboard_ItmMaxVal";
 
             DataTable dt = new DataTable();
@@ -334,10 +340,11 @@ namespace Dahboard_project
 
         }
         //function for thirdgrid get_ItmNoSls
-        public void get_ItmNoSls(string branchid)
+        public void get_ItmNoSls(string branchid,string year)
         {
             cmd3.Parameters.Clear();
             cmd3.Parameters.AddWithValue("@branchid", branchid);
+            cmd3.Parameters.AddWithValue("@year", year);
             cmd3.CommandText = "Dashboard_ItmNoSls";
 
             DataTable dt = new DataTable();
@@ -349,10 +356,11 @@ namespace Dahboard_project
         }
 
         //function for fourthgrid get_ItmMinQty
-        public void get_ItmMinQty(string branchid)
+        public void get_ItmMinQty(string branchid,string year)
         {
             cmd3.Parameters.Clear();
             cmd3.Parameters.AddWithValue("@branchid", branchid);
+            cmd3.Parameters.AddWithValue("@year", year);
             cmd3.CommandText = "Dashboard_ItmMinQty";
 
             DataTable dt = new DataTable();
