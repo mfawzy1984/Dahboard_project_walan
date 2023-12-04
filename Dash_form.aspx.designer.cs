@@ -168,6 +168,15 @@ namespace Dahboard_project
         protected global::System.Web.UI.WebControls.Literal ltchartdata3;
 
         /// <summary>
+        /// ltchartdata4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltchartdata4;
+
+        /// <summary>
         /// SqlYear control.
         /// </summary>
         /// <remarks>

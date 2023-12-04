@@ -17,6 +17,7 @@ namespace Dahboard_project
         SqlCommand cmd = new SqlCommand();
         SqlCommand cmd2 = new SqlCommand();
         SqlCommand cmd3 = new SqlCommand();
+        SqlCommand cmd4 = new SqlCommand();
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -27,9 +28,11 @@ namespace Dahboard_project
             cmd.Connection = cnn;
             cmd2.Connection = cnn;
             cmd3.Connection = cnn;
+            cmd4.Connection = cnn;
 
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd3.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd4.CommandType = System.Data.CommandType.StoredProcedure;
             string selectedItemValue = null;
 
             if (CmbYear.SelectedIndex >= 0)
@@ -67,11 +70,16 @@ namespace Dahboard_project
             burchases_BARCHART_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
 
             //  pie chart for sales branches
+            mothlypurchases_piechartfunc(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
+
             salesbranch_piechart_func();
 
-      
-
            
+
+
+
+
+
 
         }
 
@@ -87,7 +95,9 @@ namespace Dahboard_project
             //for burchases_barchart
             burchases_BARCHART_func(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
             // pie chart for sales branches
+            mothlypurchases_piechartfunc(CmbYear.Value.ToString(), Cmbbranch.Value.ToString());
             salesbranch_piechart_func();
+          
 
             get_ItmMaxQty(Cmbbranch.Value.ToString(), CmbYear.Value.ToString());
             get_ItmMaxVal(Cmbbranch.Value.ToString(), CmbYear.Value.ToString());
@@ -274,6 +284,55 @@ namespace Dahboard_project
 
         }
         //function for  pie chart  sales branches
+     
+
+
+        //function for second pie chart
+       public void mothlypurchases_piechartfunc(string year, string branch)
+        {
+
+            cmd4.CommandText = "Dashboard_ap_cashhdr";
+
+            cmd4.Parameters.Clear();
+            cmd4.Parameters.AddWithValue("@year", year);
+            cmd4.Parameters.AddWithValue("@branchid", branch);
+
+
+            string chartdata4 = "";
+            string views4 = "";
+            string labels4 = "";
+
+
+
+            chartdata4 += "<script>";
+            SqlDataReader dr5 = cmd4.ExecuteReader();
+            while (dr5.Read())
+            {
+                views4 += dr5["sales_total"] + ",";
+                labels4 += "\"" + dr5["sales_invdate"] + "\",";
+
+
+
+            }
+
+            try
+            {
+                views4 = views4.Substring(0, views4.Length - 1);
+                labels4 = labels4.Substring(0, labels4.Length - 1);
+
+                chartdata4 += "chartlabels4=[" + labels4 + "];chartdata4=[" + views4 + "]";
+                chartdata4 += "</script>";
+                ltchartdata4.Text = chartdata4;
+
+                dr5.Close();
+            }
+            catch(Exception ex)
+            {
+                dr5.Close();
+            }
+
+        }
+
         public void salesbranch_piechart_func()
         {
             cmd2.CommandText = "Dashboard_salesbranch_piechart";
@@ -307,7 +366,9 @@ namespace Dahboard_project
 
         }
 
-        //function for firstgrid get_ItmMaxQty
+
+
+        // function for firstgrid get_ItmMaxQty
 
 
         public void get_ItmMaxQty(string branchid,string year)

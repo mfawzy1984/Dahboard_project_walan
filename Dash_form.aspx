@@ -60,9 +60,9 @@
         <div class="row">
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-info">
+            <div class="small-box bg-info" style="height:150px;">
               <div class="inner">
-                  <asp:Label ID="Label1" runat="server" Width="50px" ></asp:Label>
+                  <asp:Label ID="Label1" runat="server" Width="50px" Font-Size="XX-Large" Font-Bold="true" ></asp:Label>
 
                 <p>اجمالي المبيعات</p>
               </div>
@@ -77,9 +77,9 @@
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-success">
+            <div class="small-box bg-success" style="height:150px;">
               <div class="inner">
-               <asp:Label ID="Label2" runat="server" Width="50px" > 100</asp:Label>
+               <asp:Label ID="Label2" runat="server" Width="50px" Font-Size="XX-Large" Font-Bold="true" > </asp:Label>
 
                 <p>اجمالي مرتجع المبيعات</p>
               </div>
@@ -97,9 +97,9 @@
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
+            <div class="small-box bg-warning" style="height:150px;">
               <div class="inner">
-                 <asp:Label ID="Label3" runat="server" Width="50px" > </asp:Label>
+                 <asp:Label ID="Label3" runat="server" Width="50px" Font-Size="XX-Large" Font-Bold="true" > </asp:Label>
 
                 <p>اجمالي المشتريات </p>
               </div>
@@ -118,9 +118,9 @@
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-danger">
+            <div class="small-box bg-danger" style="height:150px;">
               <div class="inner">
-                 <asp:Label ID="Label4" runat="server" Width="50px" ></asp:Label>
+                 <asp:Label ID="Label4" runat="server" Width="50px" Font-Size="XX-Large" Font-Bold="true" ></asp:Label>
 
                 <p>اجمالي مرتجع المشتريات </p>
               </div>
@@ -141,7 +141,7 @@
           <!-- Left col -->
           <section class="col-lg-7 connectedSortable">
             <!-- Custom tabs (Charts with tabs)-->
-            <div class="card">
+            <div class="card" style="height:320px;">
               <div class="card-header">
                 <h3 class="card-title">
                  
@@ -169,10 +169,10 @@
             <!-- /.card -->
 
             <!-- DIRECT CHAT -->
-            <div class="card direct-chat direct-chat-primary">
-              <div class="card-header">
+            <div class="card direct-chat direct-chat-primary" style="height:350px;">
+              <div class="card-header" >
                 
-                <h3 class="card-title">
+                <h3 class="card-title" >
                         <i class="fas fa-th mr-1"></i>
                     المشتريات الشهريه</h3>
 
@@ -207,8 +207,9 @@
           <section class="col-lg-5 connectedSortable">
 
             <!-- Map card -->
-            <div style="background-color:ghostwhite; border-block-style:solid;">
-              <div class="card-header border-0">
+           
+              <div class="card">
+              <div class="card-header">
                 <h3 class="card-title">
                     <i class="fas fa-chart-pie mr-1"></i>
                 مبيعات الفروع
@@ -223,10 +224,10 @@
               </div>
             </div>
             <!-- /.card -->
-
+             <%-- <br />--%>
             <!-- solid sales graph -->
-            <div style="background-color:ghostwhite;">
-              <div class="card-header border-0">
+            <div class="card">
+              <div class="card-header">
                 <h3 class="card-title">
                  <i class="fas fa-chart-pie mr-1"></i>
                  المصاريف الشهريه
@@ -238,9 +239,8 @@
               <div class="card-body">
               </div>
               <!-- /.card-body -->
-              <div style="background-color:ghostwhite;">
-                 <canvas id="pieChart2"></canvas> 
-                <!-- /.row -->
+               <div class="card-footer bg-transparent">
+                  <canvas id="pieChart2"></canvas>  
               </div>
               <!-- /.card-footer -->
             </div>
@@ -447,6 +447,7 @@
   <asp:Literal runat="server" ID="ltchartdata"></asp:Literal>
         <asp:Literal runat="server" ID="ltchartdata2"></asp:Literal>
         <asp:Literal runat="server" ID="ltchartdata3"></asp:Literal>
+        <asp:Literal runat="server" ID="ltchartdata4"></asp:Literal>
          <asp:SqlDataSource id="SqlYear" runat="server"   SelectCommand="select distinct  year(vchrdate) as years&#13;&#10; from gl_vouchers&#13;&#10;order by  year(vchrdate)  desc" ConnectionString="<%$ ConnectionStrings:EasyERP %>">
     </asp:SqlDataSource>
        
@@ -640,27 +641,37 @@
     </script>
        <script>
 
-           //pie
-           var ctxP = document.getElementById("pieChart2").getContext('2d');
-           var myPieChart = new Chart(ctxP, {
-               type: 'pie',
-               data: {
-                   labels: ["Red", "Green", "Yellow"],
-                   datasets: [{
-                       data: [300, 50, 100],
-                       backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C"],
-                       hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870"],
+        var chartlabels4;
+        var chartdata4;
 
-                   }]
-               },
-               options: {
-                   responsive: true,
-                   title: {
-                       display: true,
+        var ctxP = document.getElementById("pieChart2").getContext('2d');
+        var myPieChart2 = new Chart(ctxP, {
+            type: 'pie',
 
-                   }
-               }
-           });
+            data: {
+
+                labels: chartlabels4,
+
+                datasets: [{
+
+                    data: chartdata4,
+                    backgroundColor: ["#0074D9", "#FF4136", "#2ECC40", "#0074D9", "#FF4136", "#2ECC40", "#0074D9", "#FF4136", "#2ECC40", "#0074D9", "#FF4136", "#2ECC40"],
+
+
+
+
+                }]
+            },
+            options: {
+
+                responsive: true,
+                title: {
+                    display: true,
+
+                }
+            }
+        });
+
 
 
        </script>
